@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/View/img/Logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="/View/css/config.css">
+  <title>Configurações</title>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <a href="home.html"><img src="/View/img/Logo.png" alt="Logo"></a>
+      <span>Set<span class="destaque">Resume</span></span>
+    </div>
+
+    <nav class="menu">
+      <a href="home.html"><i class="bi bi-house"></i> Home</a>
+      <a href="suporte.html"><i class="bi bi-headset"></i> Suporte</a>
+      <a href="configuracoes.html"><i class="bi bi-gear-fill"></i> Configurações</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <h1>Configurações da Conta</h1>
+
+    <section class="card">
+      <h2>Segurança</h2>
+
+      <details>
+        <summary>Alterar Senha</summary>
+        <form>
+          <label>Senha Atual</label>
+          <input type="password">
+
+          <label>Nova Senha</label>
+          <input type="password">
+
+          <label>Confirmar Nova Senha</label>
+          <input type="password">
+
+          <button type="submit">Salvar Alterações</button>
+        </form>
+      </details>
+
+      <details>
+        <summary>Autenticação de Dois Fatores (2FA)</summary>
+        <p>Adicione uma camada extra de segurança à sua conta.</p>
+        <button class="btn-secundario">Ativar 2FA</button>
+      </details>
+
+      <details>
+        <summary>Dispositivos Conectados</summary>
+        <ul class="lista">
+          <li>Chrome - Windows (Atual)</li>
+          <li>Safari - iPhone</li>
+        </ul>
+        <button class="btn-perigo">Desconectar todos</button>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Preferências de Interface</h2>
+
+      <label>Tema</label>
+      <select>
+        <option>Claro</option>
+        <option>Escuro</option>
+        <option>Seguir sistema</option>
+      </select>
+
+      <label>Idioma</label>
+      <select>
+        <option>Português</option>
+        <option>Inglês</option>
+        <option>Espanhol</option>
+      </select>
+
+      <label>Tamanho da Fonte</label>
+      <select>
+        <option>Pequena</option>
+        <option>Média</option>
+        <option>Grande</option>
+      </select>
+
+      <div class="checkbox-group">
+        <label><input type="checkbox"> Alto Contraste</label>
+        <label><input type="checkbox"> Redução de Movimento</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Privacidade e Dados</h2>
+
+      <label>Visibilidade do Perfil</label>
+      <select>
+        <option>Público</option>
+        <option>Apenas Amigos</option>
+        <option>Privado</option>
+      </select>
+
+      <div class="acoes-privacidade">
+        <button class="btn-secundario">Gerenciar Cookies</button>
+        <button>Exportar Meus Dados</button>
+        <button class="btn-perigo">Excluir Conta Permanentemente</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Pagamentos e Assinatura</h2>
+
+      <p><strong>Plano Atual:</strong> Premium (Ativo)</p>
+
+      <details>
+        <summary>Métodos de Pagamento</summary>
+        <ul class="lista">
+          <li>Cartão final 4589</li>
+          <li>PIX cadastrado</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Histórico de Faturas</summary>
+        <ul class="lista">
+          <li>Março 2026 - R$29,90</li>
+          <li>Fevereiro 2026 - R$29,90</li>
+        </ul>
+      </details>
+
+      <div class="acoes-pagamento">
+        <button>Fazer Upgrade</button>
+        <button class="btn-secundario">Cancelar Assinatura</button>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <span>SetResume</span>
+    <p>
+      &copy; 2026 SetResume &nbsp;&middot;&nbsp;
+      <a href="politica-de-privacidade.html">Política de Privacidade</a> &nbsp;&middot;&nbsp;
+      <a href="sobre_nos.html">Sobre Nós</a> &nbsp;&middot;&nbsp;
+      <a href="termos-de-uso.html">Termos</a>
+    </p>
+  </footer>
+
+</body>
+
+</html>
