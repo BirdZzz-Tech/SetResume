@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #0b3c5d;
+    color: white;
+    line-height: 1.6;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0B1F3A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #C9A84C;
+    border-radius: 4px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: #04122A;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #C9A84C, #B8922E);
+    border-radius: 10px;
+    display: flex;
+    object-fit: cover;
+    align-items: center;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: #0B1F3A;
+    box-shadow: 0 4px 14px rgba(201, 168, 76, .4);
+    letter-spacing: -.02em;
+}
+
+.destaque {
+    color: #C9A84C;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #C9A84C;
+}
+
+.menu i {
+    font-size: 16px;
+}
+
+main {
+    margin-top: 100px;
+    padding: 20px;
+    color: #cdcdcd;
+}
+
+.auth-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .7);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.auth-modal.ativo {
+    display: flex;
+}
+
+.auth-box {
+    background: #0B1F3A;
+    padding: 32px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    position: relative;
+    animation: aparecer .25s ease;
+}
+
+.sub-auth {
+    color: #7A8CA0;
+    font-size: .9rem;
+    margin-bottom: 20px;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.botao-auth {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.botao-auth.principal {
+    background: linear-gradient(135deg, #C9A84C, #B8922E);
+    color: #0B1F3A;
+    font-weight: 700;
+}
+
+.botao-auth.principal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(201, 168, 76, .45);
+}
+
+.botao-auth.secundario {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, .2);
+    color: #fff;
+}
+
+.divisor-auth {
+    margin: 20px 0;
+    color: #7A8CA0;
+    font-size: .8rem;
+}
+
+.social-auth {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.google:hover {
+    background: #f5f5f5;
+}
+
+.google i {
+    font-size: 20px;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

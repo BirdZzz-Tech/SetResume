@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/View/img/Logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/View/css/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <title>Login</title>
+</head>
+
+<body>
+  <section id="login">
+    <div class="container">
+      <div class="content primeiro-conteudo">
+        <div class="primeira-coluna">
+          <h2 class="titulo-primario">Já tem uma conta?</h2>
+          <p class="descricao descricao-primaria">
+            Para se manter conectado com a gente
+          </p>
+          <p class="descricao descricao-primaria">
+            por favor, digite seus dados pessoais
+          </p>
+          <button id="signin" class="btn btn-primario">Entrar</button>
+        </div>
+
+        <div class="segunda-coluna">
+          <h2 class="titulo-secundario">Criar Conta com: </h2>
+          <div class="redes-sociais">
+            <ul class="lista-redes-sociais">
+              <a class="link-redes-sociais" href="">
+                <li class="itens-redes-sociais">
+                  <i class="fa-brands fa-linkedin"></i>
+                </li>
+              </a>
+              <a class="link-redes-sociais" href="">
+                <li class="itens-redes-sociais">
+                  <i class="fa-brands fa-google"></i>
+                </li>
+              </a>
+              <a class="link-redes-sociais" href="">
+                <li class="itens-redes-sociais">
+                  <i class="fa-brands fa-github"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
+          <p class="descricao descricao-secundaria">
+            ou crie com suas credenciais
+          </p>
+          <form action="" class="form">
+            <label class="label-input" for="">
+              <i class="fa-solid fa-user icon-modify"></i>
+              <input type="text" placeholder="Nome" />
+            </label>
+            <label class="label-input" for="">
+              <i class="fa-solid fa-at icon-modify"></i>
+              <input type="email" placeholder="Email" />
+            </label>
+            <label class="label-input" for="">
+              <i class="fa-regular fa-id-card icon-modify"></i>
+              <input type="text" placeholder="Cpf" inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                title="Digite o CPF no formato 000.000.000.00" required />
+            </label>
+            <label class="label-input" for="">
+              <i class="fa-solid fa-key icon-modify"></i>
+              <input type="password" placeholder="Senha" />
+            </label>
+            <button class="btn btn-secundario">Cadastrar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="content segundo-conteudo">
+        <div class="primeira-coluna">
+          <h2 class="titulo titulo-primario">
+            Novo por aqui?
+          </h2>
+          <p class="descricao descricao-primaria">
+            Digite seus dados pessoais
+          </p>
+          <p class="descricao descricao-primaria">
+            e inicie sua jornada conosco
+          </p>
+          <button id="signup" class="btn btn-primario">Cadastrar</button>
+        </div>
+
+        <div class="segunda-coluna">
+          <h2 class="titulo titulo-secundario">Faça login com: </h2>
+          <div class="redes-sociais">
+            <ul class="lista-redes-sociais">
+              <a class="link-redes-sociais" href="">
+                <li class="itens-redes-sociais">
+                  <i class="fa-brands fa-linkedin"></i>
+                </li>
+              </a>
+              <a class="link-redes-sociais" href="">
+                <li class="itens-redes-sociais">
+                  <i class="fa-brands fa-google"></i>
+                </li>
+              </a>
+              <a class="link-redes-sociais" href="">
+                <li class="itens-redes-sociais">
+                  <i class="fa-brands fa-github"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
+          <p class="descricao descricao-secundaria">ou use suas credenciais</p>
+          <form action="" class="form">
+            <label class="label-input" for="">
+              <i class="fa-solid fa-at icon-modify"></i>
+              <input type="email" placeholder="Email" />
+            </label>
+            <label class="label-input" for="">
+              <i class="fa-solid fa-key icon-modify"></i>
+              <input type="password" placeholder="Senha" />
+            </label>
+            <a href="" class="esqueceu-senha">Esqueceu a sua senha?</a>
+            <button class="btn btn-secundario">Entrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/View/js/login.js"></script>
+</body>
+
+</html>
