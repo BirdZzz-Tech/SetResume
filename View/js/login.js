@@ -1,0 +1,12 @@
+let btnsignin = document.querySelector("#signin")
+let btnsignup = document.querySelector("#signup")
+
+let body = document.querySelector("body")
+
+btnsignin.addEventListener("click", function(){
+    body.className = "sign-in-js"
+})
+
+btnsignup.addEventListener("click", function(){
+    body.className = "sign-up-js"
+})
