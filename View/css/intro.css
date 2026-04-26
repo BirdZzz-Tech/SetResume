@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
-    color: #0E1E35;
+    font-family: 'Montserrat', sans-serif;
+    ;
+    color: #0B1F3A;
     overflow-x: hidden;
 }
 
@@ -34,7 +37,7 @@ body {
 .etiqueta-secao {
     display: inline-flex;
     align-items: center;
-    gap: px;
+    gap: 8px;
     background: linear-gradient(135deg, rgba(201, 168, 76, .15), rgba(201, 168, 76, .05));
     border: 1px solid rgba(201, 168, 76, .4);
     color: #C9A84C;
@@ -47,7 +50,8 @@ body {
 }
 
 .titulo-secao {
-    font-family: 'Montserrat', serif;
+    font-family: 'Montserrat', sans-serif;
+    ;
     font-size: clamp(2rem, 4vw, 3rem);
     color: #0B1F3A;
     line-height: 1.18;
@@ -75,7 +79,7 @@ body {
     cursor: pointer;
     text-decoration: none;
     box-shadow: 0 8px 24px rgba(201, 168, 76, .35);
-    transition: transform .2s, box-shadow .2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .botao-primario:hover {
@@ -96,7 +100,7 @@ body {
     border: 1.5px solid rgba(255, 255, 255, .35);
     cursor: pointer;
     text-decoration: none;
-    transition: background .2s, border-color .2s;
+    transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .botao-secundario:hover {
@@ -112,7 +116,7 @@ body {
     right: 0;
     z-index: 1000;
     padding: 0 24px;
-    transition: background .3s, box-shadow .3s;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navegacao-interna {
@@ -147,7 +151,8 @@ body {
 }
 
 .logotipo-texto {
-    font-family: 'Montserrat', serif;
+    font-family: 'Montserrat', sans-serif;
+    ;
     font-size: 1.35rem;
     font-weight: 700;
     color: #FFFFFF;
@@ -169,7 +174,7 @@ body {
     font-size: .88rem;
     font-weight: 500;
     text-decoration: none;
-    transition: color .2s;
+    transition: color 0.2s ease;
 }
 
 .navegacao-links a:hover {
@@ -181,7 +186,7 @@ body {
     color: #0B1F3A;
     font-weight: 700;
     padding: 9px 22px;
-    border-radius: 9px;
+    border-radius: 8px;
     box-shadow: 0 4px 14px rgba(201, 168, 76, .3);
 }
 
@@ -204,26 +209,27 @@ body {
     pointer-events: none;
 }
 
-.hero-particulas::before {
+.hero-particulas::before,
+.hero-particulas::after {
     content: '';
     position: absolute;
+    border-radius: 50%;
+}
+
+.hero-particulas::before {
     top: -200px;
     right: -200px;
     width: 700px;
     height: 700px;
     background: radial-gradient(circle, rgba(201, 168, 76, .12) 0%, transparent 65%);
-    border-radius: 50%;
 }
 
 .hero-particulas::after {
-    content: '';
-    position: absolute;
     bottom: -150px;
     left: -150px;
     width: 500px;
     height: 500px;
     background: radial-gradient(circle, rgba(21, 73, 162, .3) 0%, transparent 65%);
-    border-radius: 50%;
 }
 
 .hero-linhas-grade {
@@ -273,22 +279,9 @@ body {
     animation: pulsar 2s infinite;
 }
 
-@keyframes pulsar {
-
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: .5;
-        transform: scale(.7);
-    }
-}
-
 .hero-titulo {
-    font-family: 'Montserrat', serif;
+    font-family: 'Montserrat', sans-serif;
+    ;
     font-size: clamp(2.4rem, 5vw, 3.8rem);
     color: #FFFFFF;
     line-height: 1.12;
@@ -319,7 +312,6 @@ body {
     display: flex;
     justify-content: center;
 }
-
 
 .barra-navegador {
     background: #0D1E33;
@@ -393,7 +385,7 @@ body {
 }
 
 .nome-visualizacao {
-    color: #fff;
+    color: #FFFFFF;
     font-weight: 700;
     font-size: .95rem;
 }
@@ -430,7 +422,7 @@ body {
 .preenchimento-barra-visualizacao {
     height: 100%;
     border-radius: 4px;
-    background: linear-gradient(90deg, #1A5FCC, #C9A84C);
+    background: linear-gradient(90deg, #1549A2, #C9A84C);
 }
 
 .etiquetas-visualizacao {
@@ -462,8 +454,8 @@ body {
     font-size: .78rem;
     font-weight: 600;
     color: #0B1F3A;
-    animation: flutuar 3s ease-in-out infinite;
     border: 1px solid rgba(201, 168, 76, .2);
+    animation: flutuar 3s ease-in-out infinite;
 }
 
 .cartao-flutuante.cartao-1 {
@@ -484,18 +476,6 @@ body {
     animation-delay: .8s;
 }
 
-@keyframes flutuar {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
 .icone-cartao-flutuante {
     width: 34px;
     height: 34px;
@@ -512,19 +492,56 @@ body {
 }
 
 .icone-cartao-flutuante.azul {
-    background: linear-gradient(135deg, #1A5FCC, #1549A2);
-    color: #fff;
+    background: linear-gradient(135deg, #0B1F3A, #1549A2);
+    color: #FFFFFF;
 }
 
 .icone-cartao-flutuante.verde {
     background: linear-gradient(135deg, #10B981, #059669);
-    color: #fff;
+    color: #FFFFFF;
 }
 
 .rotulo-cartao-flutuante {
     font-size: .68rem;
     color: #7A8CA0;
     font-weight: 400;
+}
+
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .5;
+        transform: scale(.7);
+    }
+}
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 #confiavel {
@@ -569,7 +586,7 @@ body {
     font-size: .85rem;
     font-weight: 700;
     letter-spacing: .06em;
-    transition: color .2s;
+    transition: color 0.2s ease;
 }
 
 .item-marca:hover {
@@ -608,12 +625,7 @@ body {
     border: 1px solid #E8EDF5;
     position: relative;
     overflow: hidden;
-    transition: transform .25s, box-shadow .25s;
-}
-
-.cartao-passo:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(11, 31, 58, .12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cartao-passo::before {
@@ -623,11 +635,17 @@ body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #1A5FCC, #C9A84C);
+    background: linear-gradient(90deg, #1549A2, #C9A84C);
+}
+
+.cartao-passo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(11, 31, 58, .12);
 }
 
 .numero-passo {
-    font-family: 'Montserrat', serif;
+    font-family: 'Montserrat', sans-serif;
+    ;
     font-size: 4rem;
     font-weight: 800;
     color: #E8EDF5;
@@ -667,14 +685,30 @@ body {
 
 #recursos {
     padding: 100px 0;
-    background: #FFFFFF;
+    background: linear-gradient(135deg, #040E1E 0%, #0B1F3A 100%);
+}
+
+.titulo-secao-recurso {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.18;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+.subtitulo-secao-recurso {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, .55);
+    margin: 0;
+    line-height: 1.7;
+    max-width: 600px;
 }
 
 .layout-recursos {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    align-items: center;
+    align-items: start;
 }
 
 .recursos-esquerda .etiqueta-secao {
@@ -702,8 +736,8 @@ body {
     padding: 18px 20px;
     border-radius: 14px;
     border: 1px solid #E8EDF5;
-    transition: border-color .2s, box-shadow .2s;
     cursor: default;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .item-recurso:hover {
@@ -717,18 +751,18 @@ body {
     flex-shrink: 0;
     border-radius: 10px;
     background: linear-gradient(135deg, rgba(21, 73, 162, .08), rgba(21, 73, 162, .04));
-    border: 1px solid rgba(21, 73, 162, .12);
+    border: 1px solid #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
-    color: #1A5FCC;
+    color: #FFFFFF;
 }
 
 .titulo-item-recurso {
     font-size: .95rem;
     font-weight: 700;
-    color: #0B1F3A;
+    color: #FFFFFF;
     margin-bottom: 4px;
 }
 
@@ -738,9 +772,35 @@ body {
     line-height: 1.6;
 }
 
+.recursos-direita {
+    margin-top: -150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem-recursos {
+    margin-top: 500px;
+    width: 100%;
+    height: 100%;
+    max-width: 850px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px #C9A84C;
+}
+
+.imagem-recursos img {
+    width: 180%;
+    display: block;
+    transition: transform .4s ease;
+}
+
+.imagem-recursos:hover img {
+    transform: scale(1.04);
+}
 
 #planos {
-    background: linear-gradient(135deg, #04122A 0%, #0B1F3A 100%);
+    background: linear-gradient(135deg, #040E1E 0%, #0B1F3A 100%);
     padding: 100px 0;
     position: relative;
     overflow: hidden;
@@ -785,7 +845,7 @@ body {
     padding: 36px 28px;
     position: relative;
     overflow: hidden;
-    transition: transform .25s, border-color .25s;
+    transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .cartao-plano:hover {
@@ -840,7 +900,8 @@ body {
 }
 
 .valor-plano {
-    font-family: 'Montserrat', serif;
+    font-family: 'Montserrat', sans-serif;
+    ;
     font-size: 3rem;
     font-weight: 800;
     color: #FFFFFF;
@@ -904,7 +965,7 @@ body {
     cursor: pointer;
     font-weight: 700;
     font-size: .9rem;
-    transition: .2s;
+    transition: 0.2s ease;
 }
 
 .botao-plano.contornado {
@@ -971,8 +1032,8 @@ body {
     padding: 18px 22px;
     cursor: pointer;
     background: #FFFFFF;
-    transition: background .2s;
     user-select: none;
+    transition: background 0.2s ease;
 }
 
 .pergunta:hover {
@@ -988,17 +1049,17 @@ body {
 .icone-pergunta {
     color: #C9A84C;
     font-size: 1.1rem;
-    transition: transform .3s;
+    transition: transform 0.3s ease;
 }
 
 .resposta {
     max-height: 0;
     overflow: hidden;
-    transition: max-height .35s ease, padding .35s;
     padding: 0 22px;
     font-size: .88rem;
     color: #7A8CA0;
     line-height: 1.7;
+    transition: max-height .35s ease, padding .35s ease;
 }
 
 .item-pergunta.aberto .resposta {
@@ -1038,7 +1099,8 @@ body {
 }
 
 .titulo-chamada-final {
-    font-family: 'Montserrat', serif;
+    font-family: 'Montserrat', sans-serif;
+    ;
     font-size: clamp(2rem, 4vw, 3.2rem);
     color: #FFFFFF;
     margin-bottom: 20px;
@@ -1072,12 +1134,11 @@ footer {
 
 .grade-rodape {
     max-width: 1180px;
-    margin: 0 auto;
+    margin: 0 auto 48px;
     padding: 0 24px;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 48px;
-    margin-bottom: 48px;
 }
 
 .marca-rodape .logotipo-texto {
@@ -1101,7 +1162,7 @@ footer {
 .rede-social-rodape {
     width: 36px;
     height: 36px;
-    border-radius: 9px;
+    border-radius: 8px;
     background: rgba(255, 255, 255, .06);
     border: 1px solid rgba(255, 255, 255, .1);
     display: flex;
@@ -1110,7 +1171,7 @@ footer {
     color: rgba(255, 255, 255, .5);
     font-size: 1rem;
     text-decoration: none;
-    transition: background .2s, color .2s;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .rede-social-rodape:hover {
@@ -1137,7 +1198,7 @@ footer {
     font-size: .85rem;
     color: rgba(255, 255, 255, .5);
     text-decoration: none;
-    transition: color .2s;
+    transition: color 0.2s ease;
 }
 
 .links-rodape a:hover {
@@ -1170,7 +1231,7 @@ footer {
     font-size: .78rem;
     color: rgba(255, 255, 255, .3);
     text-decoration: none;
-    transition: color .2s;
+    transition: color 0.2s ease;
 }
 
 .legal-rodape a:hover {
@@ -1278,4 +1339,98 @@ footer {
 
 .google i {
     font-size: 20px;
+}
+
+#template {
+    background-color: #F7F9FC;
+    padding: 100px 0;
+}
+
+.carrossel-wrapper {
+    width: 100vw;
+    overflow: hidden;
+    padding: 40px 0;
+    position: relative;
+}
+
+.carrossel-wrapper::before,
+.carrossel-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carrossel-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #0f0f0f, transparent);
+}
+
+.carrossel-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #0f0f0f, transparent);
+}
+
+.carrossel-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+.carrossel-track:hover {
+    animation-play-state: paused;
+}
+
+.card {
+    width: 280px;
+    height: 380px;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+    filter: grayscale(60%) brightness(.55) saturate(.7);
+    transform: scale(.92);
+    transition:
+        filter .45s ease,
+        transform .45s ease,
+        box-shadow .45s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    border-radius: 18px;
+    transition: background .45s ease;
+}
+
+.card:hover {
+    filter: grayscale(0%) brightness(1) saturate(1.15);
+    transform: scale(1.06);
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, .2),
+        0 20px 60px rgba(0, 0, 0, .7),
+        0 0 40px rgba(255, 255, 255, .07);
+}
+
+.card:hover::after {
+    background: rgba(0, 0, 0, .05);
+}
+
+.card:hover img {
+    transform: scale(1.07);
 }
