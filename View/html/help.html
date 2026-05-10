@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <link rel="shortcut icon" href="/View/img/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/View/css/style.css">
+    <link rel="stylesheet" href="/View/css/help.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+
+<nav class="nav">
+    <a href="home.html" class="nav-logo"><img src="/View/img/Logo.png" alt="SR"><span
+            class="nav-logo-texto">Set<span>Resume</span></span></a>
+    <div class="nav-links">
+        <a class="nav-link" href="home.html"><i class="bi bi-house"></i><span>Início</span></a>
+        <a class="nav-link" href="criar_curriculo.html"><i class="bi bi-plus-circle"></i><span>Criar
+                Currículo</span></a>
+    </div>
+    <div class="nav-right">
+        <a class="nav-icon-btn" href="#" title="Notificações"><i class="bi bi-bell"></i><span class="notif-dot"
+                id="notifDot"></span></a>
+        <button class="perfil-btn" id="perfilBtn" aria-label="Menu do perfil">
+            <div class="avatar-wrap"></div><i class="bi bi-chevron-down btn-chevron"></i>
+            <div class="perfil-dropdown" id="perfilDropdown">
+                <div class="dropdown-header">
+                    <div class="dh-avatar-wrap"></div>
+                    <div class="dh-info"><span id="ddNome" class="dh-nome">Usuário</span></div>
+                </div>
+                <a href="perfil.html" class="dropdown-item"><i class="bi bi-person"></i>Perfil</a>
+                <a href="configuracoes.html" class="dropdown-item"><i class="bi bi-gear"></i>Configurações</a>
+                <a href="suporte.html" class="dropdown-item"><i class="bi bi-headset"></i>Suporte</a>
+                <a href="help.html" class="dropdown-item"><i class="bi bi-question-circle"></i>Ajuda</a>
+                <div class="dropdown-sep"></div>
+                <a id="logoutBtn" class="dropdown-item logout"><i class="bi bi-box-arrow-right"></i>Sair da conta</a>
+            </div>
+        </button>
+    </div>
+</nav>
+
+<body>
+    <aside class="sidebar" id="helpSidebar">
+        <div class="sidebar-header">
+            <a href="suporte.html" class="back-link"><i class="bi bi-arrow-left"></i> Suporte</a>
+            <h2>Central de Ajuda</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="sidebar-category">
+                <span class="category-label"><i class="bi bi-person"></i> Gerenciar sua conta</span>
+                <a href="#trocar-email" class="sidebar-link">Trocar email da conta</a>
+                <a href="#resetar-senha" class="sidebar-link">Redefinir senha</a>
+                <a href="#alterar-foto-perfil" class="sidebar-link">Alterar foto de perfil</a>
+                <a href="#excluir-conta" class="sidebar-link">Excluir minha conta</a>
+                <a href="#editar-perfil" class="sidebar-link">Editar informações do perfil</a>
+            </div>
+
+            <div class="sidebar-category">
+                <span class="category-label"><i class="bi bi-file-earmark-text"></i> Recursos do currículo</span>
+                <a href="#mudar-template" class="sidebar-link">Como mudar template</a>
+                <a href="#adicionar-foto" class="sidebar-link">Adicionar foto ao currículo</a>
+                <a href="#editar-cores" class="sidebar-link">Editar cores e fontes</a>
+                <a href="#duplicar-curriculo" class="sidebar-link">Duplicar currículo</a>
+                <a href="#ats-friendly" class="sidebar-link">Criar currículo ATS-friendly</a>
+                <a href="#adicionar-experiencia" class="sidebar-link">Adicionar experiência profissional</a>
+                <a href="#adicionar-formacao" class="sidebar-link">Adicionar formação acadêmica</a>
+                <a href="#adicionar-habilidades" class="sidebar-link">Adicionar habilidades</a>
+                <a href="#reordenar-secoes" class="sidebar-link">Reordenar seções do currículo</a>
+            </div>
+
+            <div class="sidebar-category">
+                <span class="category-label"><i class="bi bi-download"></i> Exportação e PDF</span>
+                <a href="#exportar-pdf" class="sidebar-link">Exportar currículo em PDF</a>
+                <a href="#problema-download" class="sidebar-link">Problemas ao baixar arquivo</a>
+                <a href="#qualidade-pdf" class="sidebar-link">Qualidade do PDF baixa</a>
+                <a href="#impressao-cortada" class="sidebar-link">Impressão cortando conteúdo</a>
+                <a href="#nao-exporta" class="sidebar-link">Botão exportar não funciona</a>
+            </div>
+
+            <div class="sidebar-category">
+                <span class="category-label"><i class="bi bi-phone"></i> Dispositivos e compatibilidade</span>
+                <a href="#dispositivos" class="sidebar-link">Usar no celular</a>
+                <a href="#navegadores" class="sidebar-link">Navegadores suportados</a>
+                <a href="#modo-paisagem" class="sidebar-link">Melhor visualização no celular</a>
+                <a href="#tablet" class="sidebar-link">Compatibilidade com tablets</a>
+            </div>
+
+            <div class="sidebar-category">
+                <span class="category-label"><i class="bi bi-shield-lock"></i> Segurança e privacidade</span>
+                <a href="#privacidade" class="sidebar-link">Política de privacidade</a>
+                <a href="#seguranca" class="sidebar-link">Segurança dos dados</a>
+                <a href="#dispositivos-conectados" class="sidebar-link">Gerenciar dispositivos conectados</a>
+                <a href="#alterar-senha" class="sidebar-link">Alterar senha</a>
+                <a href="#atividade-suspeita" class="sidebar-link">Atividade suspeita na conta</a>
+            </div>
+        </nav>
+    </aside>
+
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menu">
+        <i class="bi bi-list"></i>
+    </button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="main">
+        <div class="content">
+            <section class="category-title">
+                <i class="bi bi-person"></i>
+                <h2>Gerenciar sua conta</h2>
+            </section>
+
+            <article class="article" id="trocar-email">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-person"></i></span>
+                    <h3>Trocar email da conta</h3>
+                </div>
+                <div class="article-body">
+                    <p>Para alterar o email associado à sua conta SetResume, siga os passos abaixo:</p>
+                    <ol class="steps">
+                        <li>Acesse <strong>Perfil</strong> clicando no seu avatar no canto superior direito.</li>
+                        <li>Clique em <strong>Perfil</strong> no menu suspenso.</li>
+                        <li>Localize o campo <strong>Email Público</strong>.</li>
+                        <li>Digite o novo email desejado</li>
+                        <li>Clique em <strong>Salvar.</strong></li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="article" id="resetar-senha">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-person"></i></span>
+                    <h3>Redefinir senha</h3>
+                </div>
+                <div class="article-body">
+                    <p>Se você esqueceu sua senha ou deseja redefini-la por segurança:</p>
+                    <ol class="steps">
+                        <li>Acesse a página de <strong>Login</strong> do SetResume.</li>
+                        <li>Clique no link <strong>"Esqueci minha senha"</strong> abaixo do campo de senha.</li>
+                        <li>Insira o email cadastrado na sua conta e clique em <strong>Enviar link de
+                                redefinição</strong>.</li>
+                        <li>Verifique sua caixa de entrada e abra o email enviado pelo SetResume.</li>
+                        <li>Clique no botão <strong>Redefinir senha</strong> dentro do email (válido por 30 minutos).
+                        </li>
+                        <li>Na página que abrir, crie uma nova senha com no mínimo 8 caracteres e confirme-a.</li>
+                        <li>Clique em <strong>Salvar nova senha</strong>. Você já poderá fazer login com ela.</li>
+                    </ol>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>Caso não receba o email, verifique a pasta de spam ou lixo eletrônico. O link de redefinição
+                            expira após 30 minutos por segurança.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article" id="alterar-foto-perfil">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-person"></i></span>
+                    <h3>Alterar foto de perfil</h3>
+                </div>
+                <div class="article-body">
+                    <p>Personalize sua conta adicionando ou trocando a foto de perfil:</p>
+                    <ol class="steps">
+                        <li>Clique no seu avatar no canto superior direito da barra de navegação.</li>
+                        <li>Selecione <strong>Perfil</strong> no menu suspenso.</li>
+                        <li>Na sua página de perfil, clique diretamente sobre a foto atual (ou no ícone de câmera que
+                            aparece ao passar o mouse).</li>
+                        <li>Escolha uma imagem do seu dispositivo. Formatos aceitos: <b>JPG, PNG ou WebP </b>.Tamanho
+                            máximo: 5 MB.</li>
+                        <li>Clique em <strong>Salvar Alterações</strong> para confirmar a troca.</li>
+                    </ol>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>Recomendamos imagens quadradas com resolução mínima de 200×200 px para garantir boa qualidade
+                            em todos os dispositivos.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article" id="excluir-conta">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-person"></i></span>
+                    <h3>Excluir minha conta</h3>
+                </div>
+                <div class="article-body">
+                    <p>A exclusão de conta é permanente e remove todos os seus currículos e dados armazenados.</p>
+                    <ol class="steps">
+                        <li>Acesse <strong>Configurações</strong> pelo menu do avatar.</li>
+                        <li>Role até a seção <em>Privacidade de Dados</em>.</li>
+                        <li>Clique em <strong>Excluir conta</strong> e leia o aviso exibido.</li>
+                        <li>Digite sua senha atual para confirmar a identidade.</li>
+                        <li>Clique em <strong>Confirmar exclusão</strong>. A ação é irreversível.</li>
+                    </ol>
+                    <div class="warning">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        <p><strong>Atenção:</strong> todos os seus currículos, dados de perfil e histórico serão
+                            apagados permanentemente. Faça o download de seus arquivos antes de prosseguir.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article" id="editar-perfil">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-person"></i></span>
+                    <h3>Editar informações do perfil</h3>
+                </div>
+                <div class="article-body">
+                    <p>Mantenha seus dados atualizados para uma melhor experiência:</p>
+                    <ol class="steps">
+                        <li>Clique no seu avatar e selecione <strong>Perfil</strong>.</li>
+                        <li>Atualize os campos desejados: nome, bio, pronome e/ou localização.</li>
+                        <li>Clique em <strong>Salvar alterações</strong> para confirmar.</li>
+                    </ol>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>As informações do perfil são separadas do conteúdo dos currículos. Alterar o perfil não
+                            atualiza automaticamente os dados nos seus currículos criados.</p>
+                    </div>
+                </div>
+            </article>
+
+            <section class="category-title">
+                <i class="bi bi-file-earmark-text"></i>
+                <h2>Recursos do currículo</h2>
+            </section>
+
+            <article class="article" id="mudar-template">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-file-earmark-text"></i></span>
+                    <h3>Como mudar template</h3>
+                </div>
+                <div class="article-body">
+                    <p>O SetResume permite trocar o design do currículo a qualquer momento sem perder o conteúdo:</p>
+                    <ol class="steps">
+                        <li>Em <strong>Currículos Recentes</strong>clique sobre o currículo a ser editado.</li>
+                        <li>No painel lateral esquerdo, clique na aba <strong>Templates</strong>.</li>
+                        <li>Navegue pela galeria de modelos disponíveis.</li>
+                        <li>Clique no template desejado. Uma prévia será exibida instantaneamente.</li>
+                        <li>Clique em <strong>Aplicar template</strong> para confirmar a troca.</li>
+                    </ol>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>Todo o conteúdo (textos, datas, habilidades) é preservado ao trocar de template. Apenas o
+                            layout e o visual são alterados.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article" id="adicionar-foto">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-file-earmark-text"></i></span>
+                    <h3>Adicionar foto ao currículo</h3>
+                </div>
+                <div class="article-body">
+                    <p>Alguns templates suportam foto de perfil diretamente no currículo:</p>
+                    <ol class="steps">
+                        <li>No editor do currículo, localize o bloco de <strong>Informações Pessoais</strong> no topo.
+                        </li>
+                        <li>Clique no ícone de foto ou no espaço indicado para imagem.</li>
+                        <li>Faça o upload de uma foto do seu dispositivo (JPG ou PNG, máx. 3 MB).</li>
+                        <li>Ajuste o enquadramento e clique em <strong>Confirmar</strong>.</li>
+                    </ol>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>Nem todos os templates incluem espaço para foto. Se a opção não aparecer, experimente trocar
+                            para um template que suporte foto de perfil. Em alguns países, adicionar foto ao currículo
+                            pode não ser recomendado.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article" id="editar-cores">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-file-earmark-text"></i></span>
+                    <h3>Editar cores e fontes</h3>
+                </div>
+                <div class="article-body">
+                    <p>Personalize a aparência visual do seu currículo:</p>
+                    <ol class="steps">
+                        <li>No editor, acesse a aba <strong>Aparência</strong> no painel lateral.</li>
+                        <li>Em <em>Esquema de cores</em>, escolha uma das paletas predefinidas ou clique em
+                            <strong>Personalizar</strong> para definir uma cor manualmente usando o seletor.
+                        </li>
+                        <li>Em <em>Tipografia</em>, selecione a combinação de fontes desejada para título e corpo do
+                            texto.</li>
+                        <li>As alterações são refletidas em tempo real na prévia do currículo.</li>
+                        <li>Clique em <strong>Salvar</strong> quando estiver satisfeito.</li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="article" id="adicionar-experiencia">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-file-earmark-text"></i></span>
+                    <h3>Adicionar experiência profissional</h3>
+                </div>
+                <div class="article-body">
+                    <p>Para adicionar ou editar entradas de experiência no seu currículo:</p>
+                    <ol class="steps">
+                        <li>No editor do currículo, localize a seção <strong>Experiência Profissional</strong>.</li>
+                        <li>Clique em <strong>+ Adicionar experiência</strong>.</li>
+                        <li>Preencha os campos: <em>Cargo</em>, <em>Empresa</em>, <em>Localização</em>, <em>Data de
+                                início</em> e <em>Data de término</em> (ou marque <em>"Emprego atual"</em>).</li>
+                        <li>No campo <em>Descrição</em>, descreva suas responsabilidades e conquistas. Use verbos de
+                            ação e dados quantitativos sempre que possível.</li>
+                        <li>Clique em <strong>Salvar</strong>.</li>
+                    </ol>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>Dica: organize as experiências em ordem cronológica inversa (mais recente primeiro). Isso é o
+                            padrão esperado por recrutadores.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article" id="adicionar-formacao">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-file-earmark-text"></i></span>
+                    <h3>Adicionar formação acadêmica</h3>
+                </div>
+                <div class="article-body">
+                    <p>Para registrar sua formação escolar ou universitária:</p>
+                    <ol class="steps">
+                        <li>No editor, acesse a seção <strong>Formação Acadêmica</strong>.</li>
+                        <li>Clique em <strong>+ Adicionar formação</strong>.</li>
+                        <li>Preencha: <em>Instituição</em>, <em>Curso / Grau</em>, <em>Área de estudo</em>,
+                            <em>Período</em>.
+                        </li>
+                        <li>Opcionalmente, adicione a média geral (CRA/GPA) ou distinções recebidas.</li>
+                        <li>Clique em <strong>Salvar</strong>.</li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="article" id="adicionar-habilidades">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-file-earmark-text"></i></span>
+                    <h3>Adicionar habilidades</h3>
+                </div>
+                <div class="article-body">
+                    <p>A seção de habilidades destaca suas competências técnicas e comportamentais:</p>
+                    <ol class="steps">
+                        <li>No editor, acesse a seção <strong>Habilidades</strong>.</li>
+                        <li>Clique em <strong>+ Adicionar habilidade</strong>.</li>
+                        <li>Digite o nome da habilidade (ex: <em>Excel, Liderança, Figma</em>).</li>
+                        <li>Se o template suportar, selecione o nível de proficiência (Básico, Intermediário, Avançado).
+                        </li>
+                        <li>Repita o processo para adicionar quantas habilidades desejar.</li>
+                        <li>Arraste e solte para reordenar as habilidades conforme sua preferência.</li>
+                    </ol>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>Priorize habilidades relevantes para as vagas que está buscando. Evite listas muito longas —
+                            8 a 12 habilidades-chave costumam ser o ideal.</p>
+                    </div>
+                </div>
+            </article>
+
+            <section class="category-title">
+                <i class="bi bi-download"></i>
+                <h2>Exportação e PDF</h2>
+            </section>
+
+            <article class="article" id="exportar-pdf">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-download"></i></span>
+                    <h3>Exportar currículo em PDF</h3>
+                </div>
+                <div class="article-body">
+                    <p>O SetResume gera um PDF profissional e pronto para enviar a recrutadores:</p>
+                    <ol class="steps">
+                        <li>Abra o currículo que deseja exportar.</li>
+                        <li>Clique no botão <strong>Exportar</strong> ou <strong>Baixar PDF</strong> no canto superior
+                            direito do editor.</li>
+                        <li>Aguarde a geração do arquivo (geralmente leva apenas alguns segundos).</li>
+                        <li>O download iniciará automaticamente. O arquivo será salvo na pasta de downloads do seu
+                            dispositivo.</li>
+                    </ol>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>O PDF é gerado com fontes incorporadas e alta resolução, ideal tanto para envio por email
+                            quanto para impressão.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article" id="problema-download">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-download"></i></span>
+                    <h3>Problemas ao baixar arquivo</h3>
+                </div>
+                <div class="article-body">
+                    <p>Se o download não iniciar ou o arquivo chegar corrompido, tente as soluções abaixo:</p>
+                    <ul class="list">
+                        <li><strong>Desative bloqueadores de pop-up:</strong> extensões como uBlock ou AdBlock podem
+                            impedir o download. Desative-os temporariamente para o SetResume.</li>
+                        <li><strong>Verifique o espaço em disco:</strong> certifique-se de ter espaço livre suficiente
+                            no dispositivo.</li>
+                        <li><strong>Tente em outro navegador:</strong> Chrome e Edge costumam apresentar melhor
+                            compatibilidade.</li>
+                        <li><strong>Limpe o cache:</strong> pressione <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Del</kbd> e
+                            limpe o cache do navegador, depois tente novamente.</li>
+                        <li><strong>Verifique sua conexão:</strong> uma internet instável pode interromper o download.
+                        </li>
+                    </ul>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>Se o problema persistir após tentar todas as soluções, entre em contato com o suporte via o
+                            formulário de contato na página de Suporte.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article" id="qualidade-pdf">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-download"></i></span>
+                    <h3>Qualidade do PDF baixa</h3>
+                </div>
+                <div class="article-body">
+                    <p>Se o PDF gerado apresentar texto borrado ou imagens pixeladas:</p>
+                    <ul class="list">
+                        <li>Verifique se a foto inserida no currículo tem resolução mínima de <strong>200×200
+                                px</strong>. Imagens de baixa resolução ficam borradas no PDF.</li>
+                        <li>Evite zoom acima de 100% ao visualizar o PDF — isso não afeta a qualidade de impressão real.
+                        </li>
+                        <li>Confira se está abrindo o PDF em um leitor atualizado (Adobe Acrobat, Chrome PDF, etc.).
+                        </li>
+                        <li>Gere o PDF novamente: clique em <strong>Exportar</strong> mais uma vez para obter uma versão
+                            atualizada.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="article" id="impressao-cortada">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-download"></i></span>
+                    <h3>Impressão cortando conteúdo</h3>
+                </div>
+                <div class="article-body">
+                    <p>Se ao imprimir o currículo o conteúdo aparecer cortado nas bordas:</p>
+                    <ol class="steps">
+                        <li>Ao imprimir, defina o <strong>tamanho do papel como A4</strong>.</li>
+                        <li>Nas configurações de impressão, selecione <strong>"Ajustar à página"</strong> ou
+                            <strong>"Escala: 100%"</strong>.
+                        </li>
+                        <li>Certifique-se de que as margens não estão definidas como "Nenhuma" — use a opção
+                            <em>Padrão</em> ou <em>Mínima</em>.
+                        </li>
+                        <li>Se possível, imprima diretamente pelo Adobe Acrobat Reader para melhor fidelidade.</li>
+                    </ol>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>Todos os templates do SetResume são projetados para o formato A4. Imprimir em papel Letter
+                            (EUA) pode causar pequenas diferenças de escala.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article" id="nao-exporta">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-download"></i></span>
+                    <h3>Botão exportar não funciona</h3>
+                </div>
+                <div class="article-body">
+                    <p>Se o botão de exportar não responde ao clique:</p>
+                    <ul class="list">
+                        <li><strong>Recarregue a página</strong> com <kbd>F5</kbd> ou <kbd>Ctrl</kbd>+<kbd>R</kbd> e
+                            tente novamente.</li>
+                        <li><strong>Desative extensões do navegador</strong> temporariamente (especialmente bloqueadores
+                            de JavaScript).</li>
+                        <li><strong>Tente em uma aba anônima/privada</strong> para descartar conflito com extensões.
+                        </li>
+                        <li><strong>Atualize o navegador</strong> para a versão mais recente.</li>
+                        <li>Confirme que está <strong>logado na sua conta</strong> — sessões expiradas podem bloquear
+                            ações.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <section class="category-title">
+                <i class="bi bi-phone"></i>
+                <h2>Dispositivos e compatibilidade</h2>
+            </section>
+
+            <article class="article" id="dispositivos">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-phone"></i></span>
+                    <h3>Usar no celular</h3>
+                </div>
+                <div class="article-body">
+                    <p>O SetResume é acessível pelo navegador do celular, mas a experiência de edição é otimizada para
+                        desktop. No celular você pode:</p>
+                    <ul class="list">
+                        <li>Visualizar seus currículos criados.</li>
+                        <li>Fazer pequenas edições de texto.</li>
+                        <li>Baixar o PDF do currículo.</li>
+                        <li>Gerenciar sua conta e configurações.</li>
+                    </ul>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>Para a melhor experiência de criação e edição completa de currículos, recomendamos usar o
+                            SetResume em um computador ou notebook com tela de no mínimo 768 px de largura.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article" id="navegadores">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-phone"></i></span>
+                    <h3>Navegadores suportados</h3>
+                </div>
+                <div class="article-body">
+                    <p>O SetResume funciona melhor nos seguintes navegadores:</p>
+                    <ul class="list">
+                        <li><strong>Google Chrome</strong> 110 ou superior ✓</li>
+                        <li><strong>Microsoft Edge</strong> 110 ou superior ✓</li>
+                        <li><strong>Mozilla Firefox</strong> 115 ou superior ✓</li>
+                        <li><strong>Safari</strong> 16 ou superior ✓</li>
+                        <li><strong>Opera</strong> 95 ou superior ✓</li>
+                    </ul>
+                    <div class="warning">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        <p>O <strong>Internet Explorer</strong> não é suportado. Recomendamos migrar para um navegador
+                            moderno para garantir segurança e compatibilidade total.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article" id="modo-paisagem">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-phone"></i></span>
+                    <h3>Melhor visualização no celular</h3>
+                </div>
+                <div class="article-body">
+                    <p>Para uma experiência mais confortável ao usar o SetResume no celular:</p>
+                    <ul class="list">
+                        <li>Gire o dispositivo para o <strong>modo paisagem (horizontal)</strong> ao editar o currículo
+                            — isso amplia a área de trabalho disponível.</li>
+                        <li>Use o <strong>zoom do navegador</strong> para ajustar o tamanho dos elementos se necessário.
+                        </li>
+                        <li>No editor, utilize o botão de <strong>prévia</strong> para ver o currículo em tela cheia
+                            antes de exportar.</li>
+                        <li>Prefira usar o <strong>modo desktop</strong> do navegador móvel (disponível nas
+                            configurações do Chrome/Safari) para acessar todos os recursos.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="article" id="tablet">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-phone"></i></span>
+                    <h3>Compatibilidade com tablets</h3>
+                </div>
+                <div class="article-body">
+                    <p>Tablets oferecem uma experiência intermediária no SetResume:</p>
+                    <ul class="list">
+                        <li>Tablets com tela de <strong>10 polegadas ou maior</strong> são totalmente suportados no modo
+                            paisagem.</li>
+                        <li>O editor de currículo funciona bem no <strong>iPad Pro</strong>, <strong>Samsung Galaxy Tab
+                                S</strong> e modelos similares.</li>
+                        <li>Para tablets menores, o modo paisagem é fortemente recomendado.</li>
+                        <li>Use o <strong>Safari</strong> no iPad ou o <strong>Chrome</strong> no Android para melhor
+                            desempenho.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <section class="category-title">
+                <i class="bi bi-shield-lock"></i>
+                <h2>Segurança e privacidade</h2>
+            </section>
+
+            <article class="article" id="privacidade">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-shield-lock"></i></span>
+                    <h3>Política de privacidade</h3>
+                </div>
+                <div class="article-body">
+                    <p>O SetResume leva a privacidade dos seus dados a sério. Em resumo:</p>
+                    <ul class="list">
+                        <li><strong>Não vendemos seus dados</strong> a terceiros sob nenhuma circunstância.</li>
+                        <li>Seus currículos são <strong>privados por padrão</strong> — somente você pode acessá-los.
+                        </li>
+                        <li>Coletamos apenas os dados necessários para o funcionamento da plataforma (email, nome,
+                            conteúdo dos currículos).</li>
+                        <li>Utilizamos cookies essenciais para autenticação e preferências, e cookies analíticos
+                            anônimos para melhoria do serviço.</li>
+                        <li>Você pode solicitar a exclusão total dos seus dados a qualquer momento pela página de
+                            Configurações.</li>
+                    </ul>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>Para ler a política completa, acesse <a href="politica-de-privacidade.html"
+                                class="link">Política de Privacidade</a>.</p>
+                    </div>
+                </div>
+            </article>
+
+
+            <article class="article" id="dispositivos-conectados">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-shield-lock"></i></span>
+                    <h3>Gerenciar dispositivos conectados</h3>
+                </div>
+                <div class="article-body">
+                    <p>Verifique e gerencie onde sua conta está ativa:</p>
+                    <ol class="steps">
+                        <li>Acesse <strong>Configurações</strong> pelo menu do avatar.</li>
+                        <li>Vpa até a seção <strong>Segurança da Conta</strong>.</li>
+                        <li>Clicando em <strong>Sessões ativas</strong>, você verá todos os dispositivos logados com sua
+                            conta, incluindo
+                            localização aproximada e data de acesso.</li>
+                        <li>Clique em <strong>Encerrar sessão</strong> ao lado de qualquer dispositivo que não
+                            reconhecer.</li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="article" id="alterar-senha">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-shield-lock"></i></span>
+                    <h3>Alterar senha</h3>
+                </div>
+                <div class="article-body">
+                    <p>Para alterar sua senha enquanto está logado:</p>
+                    <ol class="steps">
+                        <li>Acesse <strong>Configurações</strong> pelo menu do avatar.</li>
+                        <li>Na seção <strong>Segurança</strong>, clique em <strong>Alterar senha</strong>.</li>
+                        <li>Digite sua <em>senha atual</em> para confirmar a identidade.</li>
+                        <li>Digite a <em>nova senha</em> e confirme-a no campo abaixo. A senha deve ter no mínimo
+                            <strong>8 caracteres</strong>.
+                        </li>
+                        <li>Clique em <strong>Salvar nova senha</strong>.</li>
+                    </ol>
+                    <div class="tip">
+                        <i class="bi bi-info-circle"></i>
+                        <p>Recomendamos usar uma senha única e forte com letras maiúsculas, minúsculas, números e
+                            símbolos. Não reutilize senhas de outros serviços.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article" id="atividade-suspeita">
+                <div class="article-header">
+                    <span class="article-badge"><i class="bi bi-shield-lock"></i></span>
+                    <h3>Atividade suspeita na conta</h3>
+                </div>
+                <div class="article-body">
+                    <p>Se você suspeitar que alguém acessou sua conta sem autorização, tome as seguintes medidas
+                        imediatamente:</p>
+                    <ol class="steps">
+                        <li><strong>Altere sua senha</strong> imediatamente (veja o artigo acima).</li>
+                        <li>Acesse <strong>Configurações &gt; Segurança</strong> e clique em <strong>Encerrar todas as
+                                sessões</strong>.</li>
+                        <li>Verifique o email cadastrado — se ele foi alterado, use o link de recuperação enviado para o
+                            email antigo.</li>
+                        <li>Revise seus currículos para identificar qualquer alteração não autorizada.</li>
+                        <li>Entre em contato com o suporte SetResume pelo formulário na página de Suporte, descrevendo o
+                            ocorrido.</li>
+                    </ol>
+                    <div class="warning">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        <p><strong>Dica de segurança:</strong> nunca compartilhe sua senha. O SetResume jamais pedirá
+                            sua senha por email ou chat.</p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <span>SetResume</span>
+        <p>
+            &copy; 2026 SetResume &nbsp;&middot;&nbsp;
+            <a href="politica-de-privacidade.html">Política de Privacidade</a>
+            &nbsp;&middot;&nbsp;
+            <a href="sobre_nos.html">Sobre Nós</a>
+            &nbsp;&middot;&nbsp;
+            <a href="termos-de-uso.html">Termos</a>
+        </p>
+    </footer>
+    <script>
+        var perfilBtn = document.getElementById("perfilBtn");
+        perfilBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            if (perfilBtn.classList.contains("aberto")) {
+                perfilBtn.classList.remove("aberto");
+                perfilBtn.setAttribute("aria-expanded", "false");
+            } else {
+                perfilBtn.classList.add("aberto");
+                perfilBtn.setAttribute("aria-expanded", "true");
+            }
+        });
+
+        const articles = document.querySelectorAll('.article');
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sidebarLinks.forEach(l => l.classList.remove('ativo'));
+                    const active = document.querySelector(`.sidebar-link[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add('ativo');
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+
+        articles.forEach(a => observer.observe(a));
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                document.getElementById('helpSidebar').classList.remove('aberta');
+                document.getElementById('sidebarOverlay').classList.remove('ativo');
+            });
+        });
+    </script>
+</body>
+
+</html>

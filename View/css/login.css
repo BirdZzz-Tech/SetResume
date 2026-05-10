@@ -51,7 +51,7 @@ body {
 }
 
 .titulo-primario {
-  color: #d4af37;
+  color: #C9A84C;
 }
 
 .titulo-secundario {
@@ -263,7 +263,6 @@ body {
 }
 
 /*DESLOCAMENTO POR TRÁS*/
-
 .sign-in-js .primeiro-conteudo .segunda-coluna {
   z-index: -1;
   position: relative;
@@ -277,7 +276,6 @@ body {
 }
 
 /*ANIMÇÃO PARA O CONTEUDO*/
-
 @keyframes deslocamentoEsq {
 
   from {
@@ -327,7 +325,6 @@ body {
 }
 
 /*ANIMAÇÃO*/
-
 @keyframes slidein {
   from {
     left: 0%;
@@ -380,4 +377,4 @@ body {
     left: 0%;
     width: 40%;
   }
-} 
+}
