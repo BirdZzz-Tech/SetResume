@@ -1,7 +1,7 @@
-let btnsignin = document.querySelector("#signin")
-let btnsignup = document.querySelector("#signup")
+const btnsignin = document.querySelector("#signin")
+const btnsignup = document.querySelector("#signup")
 
-let body = document.querySelector("body")
+const body = document.querySelector("body")
 
 btnsignin.addEventListener("click", function(){
     body.className = "sign-in-js"
@@ -10,3 +10,6 @@ btnsignin.addEventListener("click", function(){
 btnsignup.addEventListener("click", function(){
     body.className = "sign-up-js"
 })
+
+
+

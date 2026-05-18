@@ -239,13 +239,13 @@ body {
   border-bottom-right-radius: 15px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  animation: slidein 3s;
+  animation: slidein 0.5s;
 
   z-index: 12;
 }
 
 .sign-up-js .content::before {
-  animation: slideout 3s;
+  animation: slideout 0.5s;
   z-index: 12;
 }
 
@@ -267,13 +267,13 @@ body {
 .sign-in-js .primeiro-conteudo .segunda-coluna {
   z-index: -1;
   position: relative;
-  animation: deslocamentoEsq 3s;
+  animation: deslocamentoEsq 0.5s;
 }
 
 .sign-up-js .segundo-conteudo .segunda-coluna {
   z-index: -1;
   position: relative;
-  animation: deslocamentoDir 3s;
+  animation: deslocamentoDir 0.5s;
 }
 
 /*ANIMÇÃO PARA O CONTEUDO*/
@@ -344,11 +344,6 @@ body {
     width: 60%;
   }
 
-  75% {
-    left: 45%;
-    width: 50%;
-  }
-
   to {
     left: 60%;
     width: 40%;
@@ -369,11 +364,6 @@ body {
   50% {
     left: 25%;
     width: 60%;
-  }
-
-  75% {
-    left: 5%;
-    width: 50%;
   }
 
   to {

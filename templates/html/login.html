@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="/View/img/Logo.png" type="image/x-icon" />
-  <link rel="stylesheet" href="/View/css/login.css" />
+  <link rel="shortcut icon" href="/static/img/Logo.png" type="image/x-icon" />
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <title>Login</title>
 </head>
@@ -52,11 +52,11 @@
           <form action="" class="form">
             <label class="label-input" for="">
               <i class="fa-solid fa-user icon-modify"></i>
-              <input type="text" placeholder="Nome" />
+              <input type="text" placeholder="Nome" pattern="^[A-Za-zÀ-ÿ ]{2,}$" required/>
             </label>
             <label class="label-input" for="">
               <i class="fa-solid fa-at icon-modify"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" required/>
             </label>
             <label class="label-input" for="">
               <i class="fa-regular fa-id-card icon-modify"></i>
@@ -65,9 +65,14 @@
             </label>
             <label class="label-input" for="">
               <i class="fa-solid fa-key icon-modify"></i>
-              <input type="password" placeholder="Senha" />
+              <input type="password" placeholder="Senha" title="A senha precisa conter: 
+    No mínimo 8 caracteres;
+    Uma letra maiúscula [A-Z];
+    Um número [0-9];
+    Um caractere especial [!@#$%&*]."
+    pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$" required/>
             </label>
-            <button class="btn btn-secundario">Cadastrar</button>
+            <button  class="btn btn-secundario">Cadastrar</button>
           </form>
         </div>
       </div>
@@ -111,11 +116,11 @@
           <form action="" class="form">
             <label class="label-input" for="">
               <i class="fa-solid fa-at icon-modify"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" required/>
             </label>
             <label class="label-input" for="">
               <i class="fa-solid fa-key icon-modify"></i>
-              <input type="password" placeholder="Senha" />
+              <input type="password" placeholder="Senha" required/>
             </label>
             <a href="" class="esqueceu-senha">Esqueceu a sua senha?</a>
             <button class="btn btn-secundario">Entrar</button>
@@ -125,7 +130,7 @@
     </div>
   </section>
 
-  <script src="/View/js/login.js"></script>
+  <script src="/static/js/login.js"></script>
 </body>
 
 </html>
