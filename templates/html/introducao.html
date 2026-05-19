@@ -2,151 +2,67 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="{% static 'css/intro.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/intro.css">
     <link rel="shortcut icon" href="/static/img/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <title>SetResume</title>
 </head>
 
 <body>
+
     <nav id="navbar">
         <div class="navegacao-interna">
             <a href="#" class="logotipo">
                 <div class="logotipo-marca"><img src="/static/img/Logo.png" alt=""></div>
                 <span class="logotipo-texto">Set<span>Resume</span></span>
             </a>
-
             <ul class="navegacao-links">
-                <li><a href="#comoFunciona">Como funciona</a></li>
-                <li><a href="#recursos">Recursos</a></li>
-                <li><a href="#planos">Planos</a></li>
-                <li><a href="#perguntas">FAQ</a></li>
-                <a href="#" class="navegacao-cta" onclick="abrirModal()">Comece grátis</a>
+                <li><a href="#comoFunciona"><i class="bi bi-ui-checks-grid"></i>Como funciona</a></li>
+                <li><a href="#recursos"><i class="bi bi-stars"></i> Recursos</a></li>
+                <li><a href="#template"><i class="bi bi-file-earmark-richtext"></i>Templates</a></li>
+                <li><a href="#planos"><i class="bi bi-gem"></i>Preço</a></li>
+                <li><a href="#perguntas"><i class="bi bi-question-circle"></i> FAQ</a></li>
+                <a href="#" class="botao-primario" style="font-size:1rem;padding:16px 36px"
+                    onclick="abrirModal()">Comece Gratis</a>
             </ul>
         </div>
     </nav>
 
     <section id="hero">
-        <div class="hero-particulas"></div>
-        <div class="hero-linhas-grade"></div>
-
-        <div class="hero-conteudo">
-            <div class="hero-esquerda">
-                <div class="hero-distintivo">
-                    <span class="ponto"></span>
-                    Plataforma de currículos profissionais
-                </div>
-
-                <h1 class="hero-titulo">
-                    Seu currículo.<br />
-                    Sua <span class="destaque">primeira impressão.</span><br />
-                    Seu futuro.
-                </h1>
-
-                <p class="hero-descricao">
-                    Crie um currículo profissional em minutos com o SetResume. Acompanhe quem visualizou seu perfil,
-                    impulsione sua visibilidade e chegue mais rápido à próxima oportunidade da sua carreira.
-                </p>
-
-                <div class="hero-acoes">
-                    <a href="#" class="botao-primario" onclick="abrirModal()">
-                        <i class="bi bi-file-earmark-person"></i>
-                        Criar meu currículo
-                    </a>
-                    <a href="#comoFunciona" class="botao-secundario">
-                        <i class="bi bi-play-circle"></i>
-                        Saiba mais
-                    </a>
+        <div class="hero-interno">
+            <div class="hero-video-wrapper">
+                <div class="hero-video-accent"></div>
+                <div class="hero-video-accent-br"></div>
+                <video autoplay muted loop playsinline>
+                    <source src="/static/img/vid3.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-texto">
+                <h1 class="hero-titulo">Crie seu currículo <span>online</span> em poucos minutos</h1>
+                <p class="hero-subtitulo">Veja como fazer seu currículo online com a ajuda do nosso gerador de
+                    currículos. Aqui você encontra o passo a passo para criar um currículo profissional personalizado
+                    sem perda de tempo.</p>
+                <div class="hero-botoes">
+                    <a href="#" class="btn-criar" onclick="abrirModal()"><i
+                            class="bi bi-file-earmark-person-fill"></i>Criar currículo</a>
+                    <a href="#comoFunciona" class="botao-secundario" style="color:#1549A2;border:1px solid #1549A2"><i
+                            class="bi bi-info-circle"></i>Saiba Mais</a>
                 </div>
             </div>
-
-            <div class="hero-direita">
-                <div class="cartao-flutuante cartao-1">
-                    <div class="icone-cartao-flutuante dourado"><i class="bi bi-eye"></i></div>
-                    <div>
-                        <div>+47 visualizações</div>
-                        <div class="rotulo-cartao-flutuante">nos últimos 7 dias</div>
-                    </div>
-                </div>
-                <div class="cartao-flutuante cartao-2">
-                    <div class="icone-cartao-flutuante verde"><i class="bi bi-check-circle"></i></div>
-                    <div>
-                        <div>Perfil verificado</div>
-                        <div class="rotulo-cartao-flutuante">SetResume Pro</div>
-                    </div>
-                </div>
-                <div class="cartao-flutuante cartao-3">
-                    <div class="icone-cartao-flutuante azul"><i class="bi bi-graph-up-arrow"></i></div>
-                    <div>
-                        <div>Ranking #12</div>
-                        <div class="rotulo-cartao-flutuante">na sua área</div>
-                    </div>
-                </div>
-
-                <div class="maquete-navegador">
-                    <div class="barra-navegador">
-                        <div class="navegador-pontos">
-                            <span class="ponto-vermelho"></span>
-                            <span class="ponto-amarelo"></span>
-                            <span class="ponto-verde"></span>
-                        </div>
-                        <div class="navegador-url">setresume.com.br/seu-perfil</div>
-                    </div>
-                    <div class="visualizacao-curriculo">
-                        <div class="cabecalho-visualizacao">
-                            <div class="avatar-visualizacao">JS</div>
-                            <div>
-                                <div class="nome-visualizacao">João da Silva</div>
-                                <div class="cargo-visualizacao">Designer de Produto — São Paulo, BR</div>
-                            </div>
-                        </div>
-                        <div class="linha-dourada-visualizacao"></div>
-                        <div class="titulo-secao-visualizacao">Habilidades principais</div>
-                        <div
-                            style="margin-bottom:4px; display:flex; justify-content:space-between; font-size:.65rem; color:#7A8CA0;">
-                            <span>Figma</span><span>92%</span>
-                        </div>
-                        <div class="barra-visualizacao">
-                            <div class="preenchimento-barra-visualizacao" style="width:92%"></div>
-                        </div>
-                        <div
-                            style="margin-bottom:4px; display:flex; justify-content:space-between; font-size:.65rem; color:#7A8CA0;">
-                            <span>UX Research</span><span>84%</span>
-                        </div>
-                        <div class="barra-visualizacao">
-                            <div class="preenchimento-barra-visualizacao" style="width:84%"></div>
-                        </div>
-                        <div
-                            style="margin-bottom:4px; display:flex; justify-content:space-between; font-size:.65rem; color:#7A8CA0;">
-                            <span>Prototipação</span><span>78%</span>
-                        </div>
-                        <div class="barra-visualizacao">
-                            <div class="preenchimento-barra-visualizacao" style="width:78%"></div>
-                        </div>
-                        <div class="etiquetas-visualizacao">
-                            <div class="etiqueta-visualizacao">Design Systems</div>
-                            <div class="etiqueta-visualizacao">Acessibilidade</div>
-                            <div class="etiqueta-visualizacao">Motion</div>
-                            <div class="etiqueta-visualizacao">Liderança</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         </div>
     </section>
 
     <section id="confiavel">
         <div class="confiavel-interno">
-            <span class="confiavel-rotulo">Utilizado por profissionais de</span>
+            <span class="confiavel-rotulo">Feito para:</span>
             <div class="confiavel-marcas">
-                <div class="item-marca"><i class="bi bi-building"></i> Startups</div>
-                <div class="item-marca"><i class="bi bi-briefcase"></i> Agências</div>
-                <div class="item-marca"><i class="bi bi-laptop"></i> Empresas Tech</div>
-                <div class="item-marca"><i class="bi bi-mortarboard"></i> Recém-formados</div>
-                <div class="item-marca"><i class="bi bi-person-badge"></i> Freelancers</div>
+                <a class="item-marca"><i class="bi bi-building"></i> Startups</a>
+                <a class="item-marca"><i class="bi bi-briefcase"></i> Agências</a>
+                <a class="item-marca"><i class="bi bi-laptop"></i> Empresas Tech</a>
+                <a class="item-marca"><i class="bi bi-mortarboard"></i> Recém-formados</a>
+                <a class="item-marca"><i class="bi bi-person-badge"></i> Freelancers</a>
             </div>
         </div>
     </section>
@@ -155,11 +71,10 @@
         <div class="container">
             <div class="como-cabecalho">
                 <div class="etiqueta-secao"><i class="bi bi-lightning-charge-fill"></i> Como funciona</div>
-                <h2 class="titulo-secao" style="margin-top:16px;">Três passos para o currículo<br />que você merece</h2>
+                <h2 class="titulo-secao" style="margin-top:16px">Três passos para o currículo<br>que você merece</h2>
                 <p class="subtitulo-secao">Simples, rápido e com resultados reais. Seu perfil profissional estará no ar
                     em menos de 5 minutos.</p>
             </div>
-
             <div class="grade-passos">
                 <div class="cartao-passo">
                     <div class="numero-passo">01</div>
@@ -188,56 +103,139 @@
 
     <section id="recursos">
         <div class="container">
+            <div class="topo-recursos">
+                <div class="etiqueta-secao">
+                    <i class="bi bi-stars"></i>
+                    Recursos
+                </div>
+                <h2 class="titulo-secao-recurso">
+                    Tudo que você precisa para<br>
+                    se destacar no mercado
+                </h2>
+                <p class="subtitulo-secao">
+                    Do currículo ao acompanhamento de visitas, o SetResume entrega
+                    ferramentas reais para alavancar sua carreira.
+                </p>
+            </div>
             <div class="layout-recursos">
-                <div class="recursos-esquerda">
-                    <div class="etiqueta-secao"><i class="bi bi-stars"></i> Recursos</div>
-                    <h2 class="titulo-secao">Tudo que você precisa para<br />se destacar no mercado</h2>
-                    <p class="subtitulo-secao">Do currículo ao acompanhamento de visitas, o SetResume entrega
-                        ferramentas reais para alavancar sua carreira.</p>
+                <div class="lista-recursos">
+                    <div class="item-recurso">
+                        <div class="icone-item-recurso">
+                            <i class="bi bi-eye"></i>
+                        </div>
 
-                    <div class="lista-recursos">
-                        <div class="item-recurso">
-                            <div class="icone-item-recurso"><i class="bi bi-eye"></i></div>
-                            <div>
-                                <div class="titulo-item-recurso">Rastreamento de Visualizações</div>
-                                <div class="descricao-item-recurso">Veja em tempo real quem abriu seu currículo, quando
-                                    e com que frequência. Cada visita registrada.</div>
+                        <div>
+                            <div class="titulo-item-recurso">
+                                Rastreamento de Visualizações
+                            </div>
+
+                            <div class="descricao-item-recurso">
+                                Veja em tempo real quem abriu seu currículo,
+                                quando e com que frequência.
                             </div>
                         </div>
-                        <div class="item-recurso">
-                            <div class="icone-item-recurso"><i class="bi bi-rocket-takeoff"></i></div>
-                            <div>
-                                <div class="titulo-item-recurso">Impulsionamento de Perfil</div>
-                                <div class="descricao-item-recurso">Com os planos pagos, seu perfil ganha destaque nas
-                                    buscas internas e aumenta a visibilidade para recrutadores.</div>
+                    </div>
+                    <div class="item-recurso">
+                        <div class="icone-item-recurso">
+                            <i class="bi bi-rocket-takeoff"></i>
+                        </div>
+                        <div>
+                            <div class="titulo-item-recurso">
+                                Impulsionamento de Perfil
+                            </div>
+
+                            <div class="descricao-item-recurso">
+                                Ganhe destaque nas buscas internas e aumente
+                                sua visibilidade para recrutadores.
                             </div>
                         </div>
-                        <div class="item-recurso">
-                            <div class="icone-item-recurso"><i class="bi bi-link-45deg"></i></div>
-                            <div>
-                                <div class="titulo-item-recurso">Link Personalizado</div>
-                                <div class="descricao-item-recurso">Tenha seu próprio endereço web profissional:
-                                    setresume.com.br/seu-nome. Simples de compartilhar.</div>
+                    </div>
+
+                    <div class="item-recurso">
+                        <div class="icone-item-recurso">
+                            <i class="bi bi-link-45deg"></i>
+                        </div>
+                        <div>
+                            <div class="titulo-item-recurso">
+                                Link Personalizado
+                            </div>
+
+                            <div class="descricao-item-recurso">
+                                Tenha seu próprio endereço profissional:
+                                setresume.com.br/seu-nome.
                             </div>
                         </div>
-                        <div class="item-recurso">
-                            <div class="icone-item-recurso"><i class="bi bi-download"></i></div>
-                            <div>
-                                <div class="titulo-item-recurso">Exportação em PDF</div>
-                                <div class="descricao-item-recurso">Baixe seu currículo em PDF formatado, pronto para
-                                    envio em processos seletivos tradicionais.</div>
+                    </div>
+
+                    <div class="item-recurso">
+                        <div class="icone-item-recurso">
+                            <i class="bi bi-download"></i>
+                        </div>
+                        <div>
+                            <div class="titulo-item-recurso">
+                                Exportação em PDF
+                            </div>
+
+                            <div class="descricao-item-recurso">
+                                Baixe seu currículo pronto para envio
+                                em processos seletivos.
                             </div>
                         </div>
-                        <div class="item-recurso">
-                            <div class="icone-item-recurso"><i class="bi bi-bar-chart-line"></i></div>
-                            <div>
-                                <div class="titulo-item-recurso">Painel de Métricas</div>
-                                <div class="descricao-item-recurso">Gráficos e dados de desempenho do seu perfil ao
-                                    longo do tempo. Saiba o que funciona.</div>
+                    </div>
+                    <div class="item-recurso">
+                        <div class="icone-item-recurso">
+                            <i class="bi bi-bar-chart-line"></i>
+                        </div>
+                        <div>
+                            <div class="titulo-item-recurso">
+                                Painel de Métricas
+                            </div>
+                            <div class="descricao-item-recurso">
+                                Acompanhe gráficos e desempenho
+                                do seu perfil ao longo do tempo.
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="recursos-direita">
+                    <div class="recurso-video-wrapper">
+                        <div class="recurso-video-accent"></div>
+                        <div class="recurso-video-accent-br"></div>
+
+                        <video autoplay muted loop playsinline>
+                            <source src="/static/img/vid3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="template">
+        <div class="container">
+            <div class="como-cabecalho">
+                <div class="etiqueta-secao"><i class="bi bi-file-earmark-richtext"></i> Templates</div>
+                <h2 class="titulo-secao">Escolha o template ideal para seu currículo</h2>
+                <p class="subtitulo-secao">Use templates otimizados para destacar suas qualificações e chamar atenção no
+                    processo seletivo.</p>
+            </div>
+        </div>
+        <div class="carrossel-wrapper">
+            <div class="carrossel-track">
+                <div class="card"><img src="/static/img/carrossel 1.png"></div>
+                <div class="card"><img src="/static/img/carrossel 2.png"></div>
+                <div class="card"><img src="/static/img/carrossel 3.png"></div>
+                <div class="card"><img src="/static/img/carrossel 4.png"></div>
+                <div class="card"><img src="/static/img/carrossel 5.png"></div>
+                <div class="card"><img src="/static/img/carrossel 6.png"></div>
+                <div class="card"><img src="/static/img/carrossel 7.png"></div>
+                <div class="card"><img src="/static/img/carrossel 1.png"></div>
+                <div class="card"><img src="/static/img/carrossel 2.png"></div>
+                <div class="card"><img src="/static/img/carrossel 3.png"></div>
+                <div class="card"><img src="/static/img/carrossel 4.png"></div>
+                <div class="card"><img src="/static/img/carrossel 5.png"></div>
+                <div class="card"><img src="/static/img/carrossel 6.png"></div>
+                <div class="card"><img src="/static/img/carrossel 7.png"></div>
             </div>
         </div>
     </section>
@@ -246,11 +244,10 @@
         <div class="container" style="position:relative;z-index:1">
             <div class="cabecalho-planos">
                 <div class="etiqueta-secao"><i class="bi bi-gem"></i> Planos</div>
-                <h2 class="titulo-secao" style="margin-top:16px;">Invista no seu futuro profissional</h2>
+                <h2 class="titulo-secao" style="margin-top:16px">Invista no seu futuro profissional</h2>
                 <p class="subtitulo-secao">Comece de graça e evolua quando quiser. Sem contrato, cancele a qualquer
                     momento.</p>
             </div>
-
             <div class="grade-planos">
                 <div class="cartao-plano">
                     <div class="nome-plano">Gratuito</div>
@@ -263,7 +260,7 @@
                         online.</p>
                     <div class="divisor-plano"></div>
                     <div class="recursos-plano">
-                        <div class="item-recurso-plano"><i class="-check-circle-fillbi bi"></i> 1 currículo online</div>
+                        <div class="item-recurso-plano"><i class="bi bi-check-circle-fill"></i> 1 currículo online</div>
                         <div class="item-recurso-plano"><i class="bi bi-check-circle-fill"></i> Link público único</div>
                         <div class="item-recurso-plano"><i class="bi bi-check-circle-fill"></i> Visualização por
                             contador simples</div>
@@ -280,13 +277,12 @@
                     </div>
                     <button class="botao-plano contornado" onclick="abrirModal()">Comece grátis</button>
                 </div>
-
                 <div class="cartao-plano popular">
                     <div class="distintivo-popular">Mais popular</div>
                     <div class="nome-plano">Pro</div>
                     <div class="preco-plano">
                         <span class="moeda-plano">R$</span>
-                        <span class="valor-plano">29</span>
+                        <span class="valor-plano">29,90</span>
                         <span class="periodo-plano">/mês</span>
                     </div>
                     <p class="descricao-plano">Para quem leva a carreira a sério e quer se destacar em processos
@@ -308,14 +304,13 @@
                         <div class="item-recurso-plano desabilitado"><i class="bi bi-x-circle-fill"></i> Destaque
                             premium nas buscas</div>
                     </div>
-                    <button class="botao-plano dourado">Assinar Pro</button>
+                    <button class="botao-plano dourado" onclick="abrirModal()">Assinar Pro</button>
                 </div>
-
                 <div class="cartao-plano">
                     <div class="nome-plano">Elite</div>
                     <div class="preco-plano">
                         <span class="moeda-plano">R$</span>
-                        <span class="valor-plano">69</span>
+                        <span class="valor-plano">69,90</span>
                         <span class="periodo-plano">/mês</span>
                     </div>
                     <p class="descricao-plano">Visibilidade máxima e todas as ferramentas para quem quer ser encontrado
@@ -338,13 +333,11 @@
                         <div class="item-recurso-plano"><i class="bi bi-check-circle-fill"></i> Domínio personalizado
                         </div>
                     </div>
-                    <button class="botao-plano contornado">Assinar Elite</button>
+                    <button class="botao-plano contornado" onclick="abrirModal()">Assinar Elite</button>
                 </div>
             </div>
-
-            <p style="text-align:center;color:rgba(255,255,255,.3);font-size:.78rem;margin-top:32px;">
-                Pagamento seguro. Cancele quando quiser. Sem multas.
-            </p>
+            <p style="text-align:center;color:rgba(255,255,255,.3);font-size:.78rem;margin-top:32px">Pagamento seguro.
+                Cancele quando quiser. Sem multas.</p>
         </div>
     </section>
 
@@ -353,16 +346,12 @@
             <div class="layout-perguntas">
                 <div class="perguntas-esquerda">
                     <div class="etiqueta-secao"><i class="bi bi-question-circle"></i> Dúvidas frequentes</div>
-                    <h2 class="titulo-secao">Perguntas<br />frequentes</h2>
-                    <p class="subtitulo-secao">Caso não encontre sua resposta aqui, fale com a gente pelo chat ou
-                        e-mail.</p>
-                    <a href="#" class="botao-primario"
-                        style="margin-top:28px; background:linear-gradient(135deg,#0B1F3A,#1549A2); color:#fff; box-shadow:0 8px 24px rgba(21,73,162,.3);">
-                        <i class="bi bi-chat-dots"></i> Fale conosco
-                    </a>
+                    <h2 class="titulo-secao">Perguntas<br>frequentes</h2>
+                    <p class="subtitulo-secao">Caso não encontre sua resposta aqui, fale com a gente pelo e-mail.</p>
+                    <div class="btn-contato"><a href="sobre_nos.html" class="botao-primario"><i
+                                class="bi bi-envelope-fill"></i>Contato</a></div>
                 </div>
-
-                <div class="lista-perguntas" id="listaPerguntas">
+                <div class="lista-perguntas">
                     <div class="item-pergunta">
                         <div class="pergunta" onclick="alternarPergunta(this)">
                             <span class="texto-pergunta">O plano gratuito realmente é grátis para sempre?</span>
@@ -372,7 +361,6 @@
                             seu currículo online de forma gratuita. Os planos pagos oferecem recursos extras para quem
                             quer ir além.</div>
                     </div>
-
                     <div class="item-pergunta">
                         <div class="pergunta" onclick="alternarPergunta(this)">
                             <span class="texto-pergunta">Posso cancelar minha assinatura a qualquer momento?</span>
@@ -381,7 +369,6 @@
                         <div class="resposta">Sim. Não há fidelidade ou multa de cancelamento. Ao cancelar, seu perfil
                             volta ao plano gratuito e você mantém seus dados cadastrados.</div>
                     </div>
-
                     <div class="item-pergunta">
                         <div class="pergunta" onclick="alternarPergunta(this)">
                             <span class="texto-pergunta">Como funciona o rastreamento de visualizações?</span>
@@ -391,7 +378,6 @@
                             visita. No plano Pro e Elite você vê detalhes como horário, origem do acesso e frequência.
                             No plano gratuito você vê apenas o contador total.</div>
                     </div>
-
                     <div class="item-pergunta">
                         <div class="pergunta" onclick="alternarPergunta(this)">
                             <span class="texto-pergunta">O impulsionamento garante que serei contratado?</span>
@@ -402,7 +388,6 @@
                             por recrutadores, mas não garante contratação; isso depende de vários fatores externos.
                         </div>
                     </div>
-
                     <div class="item-pergunta">
                         <div class="pergunta" onclick="alternarPergunta(this)">
                             <span class="texto-pergunta">Meus dados são seguros na plataforma?</span>
@@ -412,7 +397,6 @@
                             LGPD. Você tem controle total sobre o que é público em seu perfil e pode torná-lo privado a
                             qualquer momento.</div>
                     </div>
-
                     <div class="item-pergunta">
                         <div class="pergunta" onclick="alternarPergunta(this)">
                             <span class="texto-pergunta">Consigo exportar meu currículo em PDF?</span>
@@ -430,115 +414,66 @@
     <section id="chamada-final">
         <div style="position:relative;z-index:1">
             <div class="etiqueta-chamada-final">
-                <div class="etiqueta-secao" style="margin:0 auto; display:inline-flex;"><i
+                <div class="etiqueta-secao" style="margin:0 auto;display:inline-flex"><i
                         class="bi bi-rocket-takeoff-fill"></i> Comece hoje</div>
             </div>
-            <h2 class="titulo-chamada-final">Pronto para ser <span class="destaque">encontrado</span><br />pelos
-                melhores recrutadores?</h2>
+            <h2 class="titulo-chamada-final">Pronto para ser <span class="destaque">encontrado</span><br>pelos melhores
+                recrutadores?</h2>
             <p class="subtitulo-chamada-final">Crie seu currículo online agora mesmo, de forma gratuita. Seu próximo
                 emprego pode estar a um link de distância.</p>
             <div class="acoes-chamada-final">
-                <a href="#" class="botao-primario" style="font-size:1rem; padding:16px 36px;" onclick="abrirModal()">
-                    <i class="bi bi-file-earmark-person-fill"></i>
-                    Criar meu currículo grátis
+                <a href="#" class="botao-primario" style="font-size:1rem;padding:16px 36px" onclick="abrirModal()">
+                    <i class="bi bi-file-earmark-person-fill"></i> Criar meu currículo grátis
                 </a>
-                <a href="#planos" class="botao-secundario" style="font-size:1rem; padding:16px 36px;">
-                    <i class="bi bi-gem"></i>
-                    Ver planos
+                <a href="#planos" class="botao-secundario" style="font-size:1rem;padding:16px 36px">
+                    <i class="bi bi-gem"></i> Ver planos
                 </a>
             </div>
         </div>
-    </section>
-    
-        <footer>
-            <div class="grade-rodape">
-                <div class="marca-rodape">
-                    <a href="#" class="logotipo">
-                        <div class="logotipo-marca"><img src="/static/img/Logo.png" alt=""></div>
-                        <span class="logotipo-texto" style="font-size:1.3rem;">Set<span>Resume</span></span>
-                    </a>
-                    <p class="slogan-rodape">A plataforma que coloca seu currículo na frente dos recrutadores certos.
-                        Profissional, simples e poderoso.</p>
-                    <div class="redes-sociais-rodape">
-                        <a href="#" class="rede-social-rodape" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="rede-social-rodape" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="rede-social-rodape" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="rede-social-rodape" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                    </div>
-                </div>
-    
-                <div>
-                    <div class="titulo-coluna-rodape">Produto</div>
-                    <div class="links-rodape">
-                        <a href="#comoFunciona">Como funciona</a>
-                        <a href="#recursos">Recursos</a>
-                        <a href="#planos">Planos e preços</a>
-                        <a href="#">Modelos de currículo</a>
-                        <a href="#">Novidades</a>
-                    </div>
-                </div>
-    
-                <div>
-                    <div class="titulo-coluna-rodape">Empresa</div>
-                    <div class="links-rodape">
-                        <a href="sobre_nos.html">Sobre nós</a>
-                        <a href="#">Contato</a>
-                    </div>
-                </div>
-    
-                <div>
-                    <div class="titulo-coluna-rodape">Legal</div>
-                    <div class="links-rodape">
-                        <a href="termos-de-uso.html">Termos de uso</a>
-                        <a href="politica-de-privacidade.html">Política de privacidade</a>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="inferior-rodape">
-                <div class="copyright-rodape">© 2026 SetResume. Todos os direitos reservados.</div>
-                <div class="legal-rodape">
-                    <a href="termos-de-uso.html">Termos</a>
-                    <a href="politica-de-privacidade.html">Privacidade</a>
-                    <a href="suporte.html">Suporte</a>
-                </div>
-            </div>
-        </footer>
-    
+    </sectstatic
+
+    <footer>
+        <span>SetResume</span>
+        <p>&copy; 2026 SetResume &nbsp;&middot;&nbsp;
+            <a href="politica-de-privacidade.html">Política de Privacidade</a> &nbsp;&middot;&nbsp;
+            <a href="sobre_nos.html">Sobre Nós</a> &nbsp;&middot;&nbsp;
+            <a href="termos-de-uso.html">Termos</a>
+        </p>
+    </footer>
+
     <div id="authModal" class="auth-modal">
         <div class="auth-box">
-            <button class="fechar-modal" onclick="fecharModal()">
-                <i class="bi bi-x-lg"></i>
-            </button>
-
+            <button class="fechar-modal" onclick="fecharModal()"><i class="bi bi-x-lg"></i></button>
             <h2><img src="/static/img/Logo.png" width="100px" alt=""></h2>
             <p class="sub-auth">Crie sua conta ou entre para continuar</p>
-
-            <a href="login.html" class="botao-auth principal">
-                Login
-            </a>
-
-            <a href="login.html" class="botao-auth secundario">
-                Cadastro
-            </a>
-
-            <div class="divisor-auth">
-                <span>ou</span>
-            </div>
-
-            <button class="social-auth google">
-                <i class="bi bi-google"></i> Entrar com Google
-            </button>
+            <a href="login.html" class="botao-auth principal">Login</a>
+            <a href="login.html" class="botao-auth secundario">Cadastro</a>
+            <div class="divisor-auth"><span>ou</span></div>
+            <button class="social-auth google"><i class="bi bi-google"></i> Entrar com Google</button>
         </div>
     </div>
 
     <script>
-        function abrirModal() {
-            document.getElementById('authModal').classList.add('ativo');
-        }
-
-        function fecharModal() {
-            document.getElementById('authModal').classList.remove('ativo');
+        function abrirModal() { document.getElementById('authModal').classList.add('ativo'); }
+        function fecharModal() { document.getElementById('authModal').classList.remove('ativo'); }
+        function alternarPergunta(el) {
+            const item = el.parentElement;
+            const resposta = el.nextElementSibling;
+            const icone = el.querySelector('.icone-pergunta');
+            const aberta = item.classList.contains('ativa');
+            document.querySelectorAll('.item-pergunta').forEach(i => {
+                i.classList.remove('ativa');
+                const r = i.querySelector('.resposta');
+                const ic = i.querySelector('.icone-pergunta');
+                if (r) { r.style.maxHeight = null; r.style.opacity = '0'; }
+                if (ic) { ic.classList.replace('bi-dash', 'bi-plus'); }
+            });
+            if (!aberta) {
+                item.classList.add('ativa');
+                resposta.style.maxHeight = resposta.scrollHeight + 'px';
+                resposta.style.opacity = '1';
+                icone.classList.replace('bi-plus', 'bi-dash');
+            }
         }
     </script>
 </body>

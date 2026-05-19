@@ -2,75 +2,185 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="shortcut icon" href="/static/img/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
-    <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/home.css">
+  <link rel="shortcut icon" href="/static/img/Logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <title>Home</title>
 </head>
 
+<nav class="nav">
+  <a href="home.html" class="nav-logo"><img src = "/static/img/Logo.png" alt="SR"><span
+      class="nav-logo-texto">Set<span>Resume</span></span></a>
+  <div class="nav-links">
+    <a class="nav-link ativo" href="home.html"><i class="bi bi-house"></i><span>Início</span></a>
+    <a class="nav-link" href="criar_curriculo.html"><i class="bi bi-plus-circle"></i><span>Criar Currículo</span></a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-icon-btn" href="#" title="Notificações"><i class="bi bi-bell"></i><span class="notif-dot"
+        id="notifDot"></span></a>
+    <button class="perfil-btn" id="perfilBtn" aria-label="Menu do perfil">
+      <div class="avatar-wrap"></div><i class="bi bi-chevron-down btn-chevron"></i>
+      <div class="perfil-dropdown" id="perfilDropdown">
+        <div class="dropdown-header">
+          <div class="dh-avatar-wrap"></div>
+          <div class="dh-info"><span id="ddNome" class="dh-nome">Usuário</span></div>
+        </div>
+        <a href="perfil.html" class="dropdown-item"><i class="bi bi-person"></i>Perfil</a>
+        <a href="configuracoes.html" class="dropdown-item"><i class="bi bi-gear"></i>Configurações</a>
+        <a href="suporte.html" class="dropdown-item"><i class="bi bi-headset"></i>Suporte</a>
+        <a href="help.html" class="dropdown-item"><i class="bi bi-question-circle"></i>Ajuda</a>
+        <div class="dropdown-sep"></div>
+        <a id="logoutBtn" class="dropdown-item logout"><i class="bi bi-box-arrow-right"></i>Sair da conta</a>
+      </div>
+    </button>
+  </div>
+</nav>
+
 <body>
-    <header class="navbar">
-        <div class="logo">
-            <a href="home.html"><img src="/static/img/Logo.png" alt="Logo"></a>
-            <span>Set<span class="destaque">Resume</span></span>
-        </div>
-    
-        <nav class="menu">
-            <a href="#"><i class="bi bi-house"></i><span> Home</span></a>
-            <a href="suporte.html"><i class="bi bi-headset"></i><span>Suporte</span></a>
-            <a href="configuracoes.html"><i class="bi bi-gear-fill"></i><span>Configurações</span></a>
-            <a href="#" id="btnPerfil" title="Perfil" onclick="abrirModal()"><i class="bi bi-person"></i><span>Perfil</span></a>
-        </nav>
-    </header>
-
-    <main>
-        <h1>Lorem ipsum dolor sit ameasds</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure error sapiente reprehenderit deserunt distinctio a officiis doloremque quos dolore, deleniti, dolor blanditiis cumque soluta aperiam nihil ut autanimi sunt.</p>
-        
-        <p><a href="criar_curriculo.html">
-            <i class="bi bi-file-earmark-person"></i>
-            Criar meu currículo
-        </a></p>
-    </main>
-
-    <div id="authModal" class="auth-modal">
-        <div class="auth-box">
-            <button class="fechar-modal" onclick="fecharModal()">
-                <i class="bi bi-x-lg"></i>
-            </button>
-
-            <h2><img src="/static/img/Logo.png" width="100px" alt=""></h2>
-            <p class="sub-auth">Crie sua conta ou entre para continuar</p>
-
-            <a href="login.html" class="botao-auth principal">
-                Login
-            </a>
-
-            <a href="login.html" class="botao-auth secundario">
-                Cadastro
-            </a>
-
-            <div class="divisor-auth">
-                <span>ou</span>
-            </div>
-
-            <button class="social-auth google">
-                <i class="bi bi-google"></i> Entrar com Google
-            </button>
-        </div>
+  <main class="conteudo">
+    <div class="cabecalho">
+      <div class="saudacao">
+        <h1>Olá, <span id="ddNome">Usuário</span></h1>
+        <p>Gerencie seus currículos e acompanhe seu desempenho</p>
+      </div>
+      <div class="acoes-cabecalho">
+        <button class="btn btn-secundario">
+          <i class="bi bi-grid-3x3-gap"></i> Ver Todos
+        </button>
+        <a class="btn btn-primario" href="criar_curriculo.html">
+          <i class="bi bi-plus-lg"></i> Criar Currículo
+        </a>
+      </div>
     </div>
 
-    <script>
-        function abrirModal() {
-            document.getElementById('authModal').classList.add('ativo');
-        }
+    <div class="titulo-secao"><i class="bi bi-bar-chart-line"></i> Estatísticas</div>
+    <div class="grade-estatisticas">
+      <div class="cartao-stat">
+        <div class="icone-stat"><i class="bi bi-file-earmark-text"></i></div>
+        <div class="valor-stat" id="stat-total">0</div>
+        <div class="label-stat">Currículos criados</div>
+      </div>
+      <div class="cartao-stat">
+        <div class="icone-stat"><i class="bi bi-eye"></i></div>
+        <div class="valor-stat" id="stat-views">0</div>
+        <div class="label-stat">Visualizações de currículo</div>
+      </div>
+      <div class="cartao-stat">
+        <div class="icone-stat"><i class="bi bi-person-badge"></i></div>
+        <div class="valor-stat" id="stat-perfil">0</div>
+        <div class="label-stat">Visualizações de perfil</div>
+      </div>
+      <div class="cartao-stat">
+        <div class="icone-stat"><i class="bi bi-share"></i></div>
+        <div class="valor-stat" id="stat-compartilhamentos">0</div>
+        <div class="label-stat">Compartilhamentos</div>
+      </div>
+      <div class="cartao-stat">
+        <div class="icone-stat"><i class="bi bi-heart"></i></div>
+        <div class="valor-stat" id="stat-favoritos">0</div>
+        <div class="label-stat">Favoritos recebidos</div>
+      </div>
+      <div class="cartao-stat">
+        <div class="icone-stat"><i class="bi bi-hand-thumbs-down"></i></div>
+        <div class="valor-stat" id="stat-negativo">0</div>
+        <div class="label-stat">Avaliações negativas</div>
+      </div>
+    </div>
 
-        function fecharModal() {
-            document.getElementById('authModal').classList.remove('ativo');
-        }
-    </script>
+    <div class="titulo-secao"><i class="bi bi-star"></i> Destaques</div>
+    <div class="linha-destaques">
+      <div class="cartao-destaque">
+        <div class="icone-destaque destaque-ouro"><i class="bi bi-heart-fill"></i></div>
+        <div class="info-destaque">
+          <h4>Mais curtido</h4>
+          <p id="destaque-curtido">—</p>
+        </div>
+      </div>
+      <div class="cartao-destaque">
+        <div class="icone-destaque destaque-azul"><i class="bi bi-eye-fill"></i></div>
+        <div class="info-destaque">
+          <h4>Mais visualizado</h4>
+          <p id="destaque-visualizado">—</p>
+        </div>
+      </div>
+      <div class="cartao-destaque">
+        <div class="icone-destaque destaque-vermelho"><i class="bi bi-clock-history"></i></div>
+        <div class="info-destaque">
+          <h4>Mais recente</h4>
+          <p id="destaque-recente">—</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="titulo-secao"><i class="bi bi-collection"></i> Currículos Recentes</div>
+    <div class="grade-curriculos" id="grade-curriculos">
+      <div class="estado-vazio">
+        <i class="bi bi-file-earmark-text"></i>
+        <p>Nenhum currículo criado ainda</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="chat minimized" id="chatBox">
+    <div class="chat-header" onclick="toggleChat()">
+      <div class="chat-info">
+        <i class="bi bi-chat" style="font-size:18px; color:#C9A84C;"></i>
+        <span class="msg">Mensagens</span>
+      </div>
+      <div class="chat-actions">
+        <button><i class="bi bi-three-dots"></i></button>
+        <button><i class="bi bi-x"></i></button>
+      </div>
+    </div>
+    <div class="chat-search">
+      <input type="text" placeholder="Pesquisar mensagens...">
+    </div>
+    <div class="chat-body">
+      <div
+        style="padding:40px 24px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <div style="font-size:42px; opacity:0.3;"><i class="bi bi-chat"></i></div>
+        <p style="font-size:14px; color:rgba(255,255,255,0.6);">Você não tem mensagens</p>
+        <p style="font-size:12px; max-width:200px; line-height:1.6; color:rgba(255,255,255,0.3);">
+          Quando alguém entrar em contato com você, suas conversas aparecerão aqui.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>SetResume</span>
+    <p>
+      &copy; 2026 SetResume &nbsp;&middot;&nbsp;
+      <a href="politica-de-privacidade.html">Política de Privacidade</a> &nbsp;&middot;&nbsp;
+      <a href="sobre_nos.html">Sobre Nós</a> &nbsp;&middot;&nbsp;
+      <a href="termos-de-uso.html">Termos</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleChat() {
+      var chatBox = document.getElementById("chatBox");
+      if (chatBox.classList.contains("minimized")) {
+        chatBox.classList.remove("minimized");
+      } else {
+        chatBox.classList.add("minimized");
+      }
+    }
+    var perfilBtn = document.getElementById("perfilBtn");
+    perfilBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (perfilBtn.classList.contains("aberto")) {
+        perfilBtn.classList.remove("aberto");
+        perfilBtn.setAttribute("aria-expanded", "false");
+      } else {
+        perfilBtn.classList.add("aberto");
+        perfilBtn.setAttribute("aria-expanded", "true");
+      }
+    });
+  </script>
 </body>
 
 </html>

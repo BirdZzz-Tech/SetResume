@@ -6,6 +6,6 @@ class Perfil(models.Model):
     foto = models.ImageField(upload_model='perfis/', default='perfis/default.png', blank=True)
     plano_premium = models.BooleanField(default=False)
 
-    def __clicados__(self):
+    def __str__(self):
         return f"Perfil de {self.usuario.username}"
     

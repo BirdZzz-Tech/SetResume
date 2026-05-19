@@ -1,74 +1,283 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="{% static 'css/criar_curriculo.css' %}">
+    <title>Criar Currículo</title>
     <link rel="shortcut icon" href="/static/img/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
-    <title>Criar</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/css/criar_curriculo.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
+<nav class="nav">
+    <a href="home.html" class="nav-logo"><img src="/static/img/Logo.png" alt="SR"><span
+            class="nav-logo-texto">Set<span>Resume</span></span></a>
+    <div class="nav-links">
+        <a class="nav-link" href="home.html"><i class="bi bi-house"></i><span>Início</span></a>
+        <a class="nav-link ativo" href="criar_curriculo.html"><i class="bi bi-plus-circle"></i><span>Criar
+                Currículo</span></a>
+    </div>
+    <div class="nav-right">
+        <a class="nav-icon-btn" href="#" title="Notificações"><i class="bi bi-bell"></i><span class="notif-dot"
+                id="notifDot"></span></a>
+        <button class="perfil-btn" id="perfilBtn" aria-label="Menu do perfil">
+            <div class="avatar-wrap"></div><i class="bi bi-chevron-down btn-chevron"></i>
+            <div class="perfil-dropdown" id="perfilDropdown">
+                <div class="dropdown-header">
+                    <div class="dh-avatar-wrap"></div>
+                    <div class="dh-info"><span id="ddNome" class="dh-nome">Usuário</span></div>
+                </div>
+                <a href="perfil.html" class="dropdown-item"><i class="bi bi-person"></i>Perfil</a>
+                <a href="configuracoes.html" class="dropdown-item"><i class="bi bi-gear"></i>Configurações</a>
+                <a href="suporte.html" class="dropdown-item"><i class="bi bi-headset"></i>Suporte</a>
+                <a href="help.html" class="dropdown-item"><i class="bi bi-question-circle"></i>Ajuda</a>
+                <div class="dropdown-sep"></div>
+                <a id="logoutBtn" class="dropdown-item logout"><i class="bi bi-box-arrow-right"></i>Sair da
+                    conta</a>
+            </div>
+        </button>
+    </div>
+</nav>
+
 <body>
-    <header class="navbar">
-        <div class="logo">
-            <a href="home.html"><img src="/static/img/Logo.png" alt="Logo"></a>
-            <span>Set<span class="destaque">Resume</span></span>
+
+    <div class="area-formulario">
+        <div class="cabecalho-builder">
+            <a class="btn btn-ghost" href="home.html" style="padding:7px 12px;font-size:12px">
+                <i class="bi bi-arrow-left"></i> Voltar
+            </a>
+            <h2>Criar Novo Currículo</h2>
+            <div class="barra-progresso">
+                <div class="preenchimento-progresso" id="preenchimento-progresso" style="width:0%"></div>
+            </div>
+            <div class="indicador-etapa" id="indicador-etapa">Etapa 1 de 7</div>
         </div>
 
-        <nav class="menu">
-            <a href="home.html"><i class="bi bi-house"></i><span> Home</span></a>
-            <a href="suporte.html"><i class="bi bi-headset"></i><span>Suporte</span></a>
-            <a href="configuracoes.html"><i class="bi bi-gear-fill"></i><span>Configurações</span></a>
-            <a href="#" id="btnPerfil" title="Perfil" onclick="abrirModal()"><i
-                    class="bi bi-person"></i><span>Perfil</span></a>
-        </nav>
-    </header>
+        <div class="abas-etapas">
+            <div class="aba-etapa ativa" data-step="1"><span class="num-etapa">1</span> Dados</div>
+            <div class="aba-etapa" data-step="2"><span class="num-etapa">2</span> Formação</div>
+            <div class="aba-etapa" data-step="3"><span class="num-etapa">3</span> Experiência</div>
+            <div class="aba-etapa" data-step="4"><span class="num-etapa">4</span> Habilidades</div>
+            <div class="aba-etapa" data-step="5"><span class="num-etapa">5</span> Idiomas</div>
+            <div class="aba-etapa" data-step="6"><span class="num-etapa">6</span> Resumo</div>
+            <div class="aba-etapa" data-step="7"><span class="num-etapa">7</span> Template</div>
+        </div>
 
-    <main>
-        <h1>Lorem ipsum dolor sit ameasds</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure error sapiente reprehenderit deserunt
-            distinctio a officiis doloremque quos dolore, deleniti, dolor blanditiis cumque soluta aperiam nihil ut aut
-            animi sunt.</p>
-    </main>
+        <div class="passo-formulario ativo" id="passo-1">
+            <h3>Dados Pessoais</h3>
+            <p class="desc-passo">Campos com <span style="color:var(--gold)">*</span> são obrigatórios.</p>
 
-    <div id="authModal" class="auth-modal">
-        <div class="auth-box">
-            <button class="fechar-modal" onclick="fecharModal()">
-                <i class="bi bi-x-lg"></i>
-            </button>
-
-            <h2><img src="/static/img/Logo.png" width="100px" alt=""></h2>
-            <p class="sub-auth">Crie sua conta ou entre para continuar</p>
-
-            <a href="login.html" class="botao-auth principal">
-                Login
-            </a>
-
-            <a href="login.html" class="botao-auth secundario">
-                Cadastro
-            </a>
-
-            <div class="divisor-auth">
-                <span>ou</span>
+            <div class="linha-campos">
+                <div class="grupo-campo">
+                    <label>Idioma Nativo <span class="obrigatorio">*</span></label>
+                    <select class="campo" id="idioma-nativo">
+                        <option value="">Selecione...</option>
+                        <option>Português (Brasil)</option>
+                        <option>Inglês</option>
+                        <option>Espanhol</option>
+                        <option>Francês</option>
+                        <option>Alemão</option>
+                        <option>Italiano</option>
+                        <option>Japonês</option>
+                    </select>
+                </div>
+                <div class="grupo-campo">
+                    <label>Data de Nascimento <span class="obrigatorio">*</span></label>
+                    <input type="date" class="campo" id="data-nascimento">
+                </div>
             </div>
 
-            <button class="social-auth google">
-                <i class="bi bi-google"></i> Entrar com Google
+            <div class="linha-campos unica">
+                <div class="grupo-campo">
+                    <label>Nome Completo <span class="obrigatorio">*</span></label>
+                    <input type="text" class="campo" id="nome-completo" placeholder="Ex: João da Silva Santos">
+                </div>
+            </div>
+
+            <div class="linha-campos unica">
+                <div class="grupo-campo">
+                    <label>Endereço <span class="obrigatorio">*</span></label>
+                    <input type="text" class="campo" id="endereco" placeholder="Rua, número, cidade, estado">
+                </div>
+            </div>
+
+            <div class="linha-campos">
+                <div class="grupo-campo">
+                    <label>Telefone <span class="obrigatorio">*</span></label>
+                    <input type="tel" class="campo" id="telefone" placeholder="+55 (11) 12345-6789">
+                </div>
+                <div class="grupo-campo">
+                    <label>E-mail <span class="obrigatorio">*</span></label>
+                    <input type="email" class="campo" id="email" placeholder="seu@email.com">
+                </div>
+            </div>
+
+            <div class="linha-campos">
+                <div class="grupo-campo">
+                    <label>Estado Civil</label>
+                    <select class="campo" id="estado-civil">
+                        <option value="">Preferir não informar</option>
+                        <option>Solteiro(a)</option>
+                        <option>Casado(a)</option>
+                        <option>Divorciado(a)</option>
+                        <option>Viúvo(a)</option>
+                        <option>União Estável</option>
+                    </select>
+                </div>
+                <div class="grupo-campo"></div>
+            </div>
+
+            <div class="grupo-campo" style="margin-bottom:14px">
+                <label>Links (LinkedIn, portfólio...)</label>
+                <div id="container-links"></div>
+                <button class="btn-adicionar" onclick="adicionarLink()"><i class="bi bi-plus"></i> Adicionar
+                    link</button>
+            </div>
+        </div>
+
+        <div class="passo-formulario" id="passo-2">
+            <h3>Formação Acadêmica</h3>
+            <p class="desc-passo">Adicione sua(s) formação(ões) acadêmica(s).</p>
+            <div id="entradas-formacao"></div>
+            <button class="btn-adicionar" onclick="adicionarFormacao()"><i class="bi bi-plus"></i> Adicionar
+                formação</button>
+        </div>
+
+        <div class="passo-formulario" id="passo-3">
+            <h3>Atuação Profissional</h3>
+            <p class="desc-passo">Adicione suas experiências de trabalho.</p>
+            <div id="entradas-experiencia"></div>
+            <button class="btn-adicionar" onclick="adicionarExperiencia()"><i class="bi bi-plus"></i> Adicionar
+                experiência</button>
+        </div>
+
+        <div class="passo-formulario" id="passo-4">
+            <h3>Habilidades e Competências</h3>
+            <p class="desc-passo">Digite uma habilidade e pressione <strong>Enter</strong> para adicionar.</p>
+            <div class="grupo-campo">
+                <label>Habilidades</label>
+                <div class="area-tags" id="area-habilidades"
+                    onclick="document.getElementById('input-habilidade').focus()">
+                    <input type="text" class="input-tag" id="input-habilidade" placeholder="Digite e pressione Enter..."
+                        onkeydown="handleTagInput(event)">
+                </div>
+            </div>
+            <p style="font-size:12px;color:var(--text-dim);margin-top:8px">
+                <i class="bi bi-lightbulb" style="color:var(--gold)"></i> Adicione hard skills e soft skills!
+            </p>
+        </div>
+
+        <div class="passo-formulario" id="passo-5">
+            <h3>Idiomas</h3>
+            <p class="desc-passo">Informe os idiomas que você domina.</p>
+            <div class="bloco-idioma">
+                <div class="cabecalho-idioma">
+                    <h4><i class="bi bi-globe2" style="color:var(--gold)"></i> Idioma Nativo</h4>
+                </div>
+                <div class="grupo-campo">
+                    <label>Idioma</label>
+                    <select class="campo" id="idioma-nativo-confirmar">
+                        <option>Português (Brasil)</option>
+                        <option>Inglês</option>
+                        <option>Espanhol</option>
+                        <option>Francês</option>
+                        <option>Alemão</option>
+                        <option>Italiano</option>
+                    </select>
+                </div>
+            </div>
+            <div id="idiomas-extras"></div>
+            <button class="btn-adicionar" onclick="adicionarIdioma()"><i class="bi bi-plus"></i> Adicionar
+                idioma</button>
+        </div>
+
+        <div class="passo-formulario" id="passo-6">
+            <h3>Resumo Profissional</h3>
+            <p class="desc-passo">Um breve texto sobre você que aparece no topo do currículo.</p>
+            <div class="grupo-campo">
+                <label>Resumo</label>
+                <textarea class="campo" id="resumo-profissional" rows="7"
+                    placeholder="Ex: Desenvolvedor Full-Stack com 5 anos de experiência em aplicações web escaláveis..."></textarea>
+            </div>
+            <p style="font-size:12px;color:var(--text-dim);margin-top:8px">
+                <i class="bi bi-lightbulb" style="color:var(--gold)"></i> Entre 3 e 6 linhas é o ideal.
+            </p>
+        </div>
+
+        <div class="passo-formulario" id="passo-7">
+            <h3>Personalização</h3>
+            <p class="desc-passo">Escolha um template e a cor de destaque.</p>
+
+            <div class="titulo-secao" style="font-size:14px">
+                <i class="bi bi-layout-text-sidebar"></i> Templates
+            </div>
+            <div class="grade-templates" id="grade-templates"></div>
+
+            <div class="titulo-secao" style="font-size:14px">
+                <i class="bi bi-palette"></i> Cor de Destaque
+            </div>
+        </div>
+
+        <div class="rodape-formulario">
+            <button class="btn btn-secondary" id="btn-voltar" onclick="passoAnterior()" style="display:none">
+                <i class="bi bi-arrow-left"></i> Voltar
+            </button>
+            <div style="flex:1"></div>
+            <button class="btn btn-primary" id="btn-avancar" onclick="proximoPasso()">
+                Continuar <i class="bi bi-arrow-right"></i>
             </button>
         </div>
     </div>
-
+    <div class="area-preview">
+        <div id="preview-curriculo" class="preview-curriculo">
+            <div class="cabecalho-cv cabecalho-tmpl-1" id="cabecalho-cv">
+                <div class="nome-cv" id="nome-cv">Seu Nome</div>
+                <div class="contato-cv">
+                    <span id="cv-email">email@exemplo.com</span>
+                    <span id="cv-telefone">Telefone</span>
+                    <span id="cv-endereco">Cidade</span>
+                </div>
+            </div>
+            <div class="corpo-cv">
+                <div id="secao-resumo-cv" style="display:none">
+                    <div class="titulo-secao-cv" id="cv-sc1">RESUMO</div>
+                    <div class="resumo-cv" id="cv-resumo"></div>
+                </div>
+                <div id="secao-formacao-cv" style="display:none">
+                    <div class="titulo-secao-cv" id="cv-sc2">FORMAÇÃO</div>
+                    <div id="cv-formacao"></div>
+                </div>
+                <div id="secao-experiencia-cv" style="display:none">
+                    <div class="titulo-secao-cv" id="cv-sc3">EXPERIÊNCIA</div>
+                    <div id="cv-experiencia"></div>
+                </div>
+                <div id="secao-habilidades-cv" style="display:none">
+                    <div class="titulo-secao-cv" id="cv-sc4">HABILIDADES</div>
+                    <div class="tags-habilidades-cv" id="cv-habilidades"></div>
+                </div>
+                <div id="secao-idiomas-cv" style="display:none">
+                    <div class="titulo-secao-cv" id="cv-sc5">IDIOMAS</div>
+                    <div id="cv-idiomas"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
-        function abrirModal() {
-            document.getElementById('authModal').classList.add('ativo');
-        }
-
-        function fecharModal() {
-            document.getElementById('authModal').classList.remove('ativo');
-        }
+        var perfilBtn = document.getElementById("perfilBtn");
+        perfilBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            if (perfilBtn.classList.contains("aberto")) {
+                perfilBtn.classList.remove("aberto");
+                perfilBtn.setAttribute("aria-expanded", "false");
+            } else {
+                perfilBtn.classList.add("aberto");
+                perfilBtn.setAttribute("aria-expanded", "true");
+            }
+        });
     </script>
+    <script src="/static/js/curriculo.js"></script>
 </body>
 
 </html>

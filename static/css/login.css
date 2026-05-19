@@ -51,7 +51,7 @@ body {
 }
 
 .titulo-primario {
-  color: #d4af37;
+  color: #C9A84C;
 }
 
 .titulo-secundario {
@@ -239,13 +239,13 @@ body {
   border-bottom-right-radius: 15px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  animation: slidein 0.5s;
+  animation: slidein 3s;
 
   z-index: 12;
 }
 
 .sign-up-js .content::before {
-  animation: slideout 0.5s;
+  animation: slideout 3s;
   z-index: 12;
 }
 
@@ -263,21 +263,19 @@ body {
 }
 
 /*DESLOCAMENTO POR TRÁS*/
-
 .sign-in-js .primeiro-conteudo .segunda-coluna {
   z-index: -1;
   position: relative;
-  animation: deslocamentoEsq 0.5s;
+  animation: deslocamentoEsq 3s;
 }
 
 .sign-up-js .segundo-conteudo .segunda-coluna {
   z-index: -1;
   position: relative;
-  animation: deslocamentoDir 0.5s;
+  animation: deslocamentoDir 3s;
 }
 
 /*ANIMÇÃO PARA O CONTEUDO*/
-
 @keyframes deslocamentoEsq {
 
   from {
@@ -327,7 +325,6 @@ body {
 }
 
 /*ANIMAÇÃO*/
-
 @keyframes slidein {
   from {
     left: 0%;
@@ -342,6 +339,11 @@ body {
   50% {
     left: 25%;
     width: 60%;
+  }
+
+  75% {
+    left: 45%;
+    width: 50%;
   }
 
   to {
@@ -364,6 +366,11 @@ body {
   50% {
     left: 25%;
     width: 60%;
+  }
+
+  75% {
+    left: 5%;
+    width: 50%;
   }
 
   to {

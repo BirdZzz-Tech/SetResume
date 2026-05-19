@@ -261,7 +261,7 @@ body {
     border-color: rgba(255, 255, 255, .6);
 }
 
-.btn-voltar a{
+.btn-voltar a {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -279,4 +279,27 @@ body {
 .btn-voltar a:hover {
     background: rgba(255, 255, 255, .08);
     border-color: rgba(255, 255, 255, .6);
+}
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: rgba(201, 168, 76, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    color: #f1f1f1;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-size: 14px;
+    transition: transform .4s ease, opacity .4s ease;
+    opacity: 0;
+    z-index: 999;
+    white-space: nowrap;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
 }

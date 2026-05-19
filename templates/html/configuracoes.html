@@ -6,149 +6,203 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/static/img/Logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
-  <link rel="stylesheet" href="{% static 'css/config.css' %}">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/config.css">
   <title>Configurações</title>
 </head>
 
-<body>
-  <header class="navbar">
-    <div class="logo">
-      <a href="home.html"><img src="/static/img/Logo.png" alt="Logo"></a>
-      <span>Set<span class="destaque">Resume</span></span>
-    </div>
+<nav class="nav">
+  <a href="home.html" class="nav-logo"><img src="/static/img/Logo.png" alt="SR"><span
+      class="nav-logo-texto">Set<span>Resume</span></span></a>
+  <div class="nav-links">
+    <a class="nav-link" href="home.html"><i class="bi bi-house"></i><span>Início</span></a>
+    <a class="nav-link" href="criar_curriculo.html"><i class="bi bi-plus-circle"></i><span>Criar Currículo</span></a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-icon-btn" href="#" title="Notificações"><i class="bi bi-bell"></i><span class="notif-dot"
+        id="notifDot"></span></a>
+    <button class="perfil-btn" id="perfilBtn" aria-label="Menu do perfil">
+      <div class="avatar-wrap"></div><i class="bi bi-chevron-down btn-chevron"></i>
+      <div class="perfil-dropdown" id="perfilDropdown">
+        <div class="dropdown-header">
+          <div class="dh-avatar-wrap"></div>
+          <div class="dh-info"><span id="ddNome" class="dh-nome">Usuário</span></div>
+        </div>
+        <a href="perfil.html" class="dropdown-item"><i class="bi bi-person"></i>Perfil</a>
+        <a href="configuracoes.html" class="dropdown-item"><i class="bi bi-gear"></i>Configurações</a>
+        <a href="suporte.html" class="dropdown-item"><i class="bi bi-headset"></i>Suporte</a>
+        <a href="help.html" class="dropdown-item"><i class="bi bi-question-circle"></i>Ajuda</a>
+        <div class="dropdown-sep"></div>
+        <a id="logoutBtn" class="dropdown-item logout"><i class="bi bi-box-arrow-right"></i>Sair da conta</a>
+      </div>
+    </button>
+  </div>
+</nav>
 
-    <nav class="menu">
-      <a href="home.html"><i class="bi bi-house"></i> Home</a>
-      <a href="suporte.html"><i class="bi bi-headset"></i> Suporte</a>
-      <a href="configuracoes.html"><i class="bi bi-gear-fill"></i> Configurações</a>
-    </nav>
+<main class="wrapper">
+  <header class="header">
+    <div>
+      <h1 class="titulo">Configurações</h1>
+      <p class="subtitulo">Gerencie sua conta, privacidade e preferências</p>
+    </div>
   </header>
 
-  <div class="container">
+  <div class="grid">
+    <div class="conteudo">
+      <section class="card" id="interface">
+        <div class="card-header">
+          <div class="card-icone"><i class="bi bi-palette"></i></div>
+          <div>
+            <h2>Preferências de Interface</h2>
+            <p>Personalize sua experiência visual</p>
+          </div>
+        </div>
 
-    <h1>Configurações da Conta</h1>
+        <div class="campo">
+          <label>Tema</label>
+          <select>
+            <option>Escuro</option>
+            <option>Claro</option>
+          </select>
+        </div>
 
-    <section class="card">
-      <h2>Segurança</h2>
+        <div class="campo">
+          <label>Idioma</label>
+          <select>
+            <option>Português</option>
+            <option>Inglês</option>
+            <option>Espanhol</option>
+          </select>
+        </div>
 
-      <details>
-        <summary>Alterar Senha</summary>
-        <form>
-          <label>Senha Atual</label>
-          <input type="password">
+        <div class="checkboxes">
+          <label class="check">
+            <input type="checkbox">
+            <span class="check-mark"></span>
+            Alto Contraste
+          </label>
+        </div>
+      </section>
 
-          <label>Nova Senha</label>
-          <input type="password">
 
-          <label>Confirmar Nova Senha</label>
-          <input type="password">
+      <section class="card" id="seguranca">
+        <div class="card-header">
+          <div class="card-icone"><i class="bi bi-shield-lock"></i></div>
+          <div>
+            <h2>Segurança da Conta</h2>
+            <p>Proteja sua conta e acompanhe acessos</p>
+          </div>
+        </div>
 
-          <button type="submit">Salvar Alterações</button>
-        </form>
-      </details>
+        <div class="acoes">
+          <button class="btn btn-primario" id="abrirSenha">
+            <i class="bi bi-key"></i> Trocar Senha
+          </button>
 
-      <details>
-        <summary>Autenticação de Dois Fatores (2FA)</summary>
-        <p>Adicione uma camada extra de segurança à sua conta.</p>
-        <button class="btn-secundario">Ativar 2FA</button>
-      </details>
+          <button class="btn btn-secundario" id="abrirSessoes">
+            <i class="bi bi-laptop"></i> Sessões Ativas
+          </button>
+        </div>
 
-      <details>
-        <summary>Dispositivos Conectados</summary>
-        <ul class="lista">
-          <li>Chrome - Windows (Atual)</li>
-          <li>Safari - iPhone</li>
-        </ul>
-        <button class="btn-perigo">Desconectar todos</button>
-      </details>
-    </section>
+      </section>
 
-    <section class="card">
-      <h2>Preferências de Interface</h2>
+      <section class="card" id="privacidade">
+        <div class="card-header">
+          <div class="card-icone"><i class="bi bi-eye-slash"></i></div>
+          <div>
+            <h2>Privacidade e Dados</h2>
+            <p>Controle como seus dados são usados</p>
+          </div>
+        </div>
 
-      <label>Tema</label>
-      <select>
-        <option>Claro</option>
-        <option>Escuro</option>
-        <option>Seguir sistema</option>
-      </select>
+        <div class="campo">
+          <label>Visibilidade do Perfil</label>
+          <select>
+            <option>Público</option>
+            <option>Apenas Amigos</option>
+            <option>Privado</option>
+          </select>
+        </div>
 
-      <label>Idioma</label>
-      <select>
-        <option>Português</option>
-        <option>Inglês</option>
-        <option>Espanhol</option>
-      </select>
+        <div class="acoes">
+          <button class="btn btn-secundario">
+            <i class="bi bi-cookie"></i> Gerenciar Cookies
+          </button>
+          <button class="btn btn-perigo">
+            <i class="bi bi-trash"></i> Excluir Conta
+          </button>
+        </div>
+      </section>
 
-      <label>Tamanho da Fonte</label>
-      <select>
-        <option>Pequena</option>
-        <option>Média</option>
-        <option>Grande</option>
-      </select>
+      <section class="card" id="pagamento">
+        <div class="card-header">
+          <div class="card-icone"><i class="bi bi-credit-card"></i></div>
+          <div>
+            <h2>Pagamentos e Assinatura</h2>
+            <p>Gerencie seu plano e métodos de pagamento</p>
+          </div>
+        </div>
 
-      <div class="checkbox-group">
-        <label><input type="checkbox"> Alto Contraste</label>
-        <label><input type="checkbox"> Redução de Movimento</label>
-      </div>
-    </section>
+        <div class="plano-atual">
+          <div class="plano-info">
+            <span class="plano-nome">Basico</span>
+            <span class="plano-status">Ativo</span>
+          </div>
+          <p class="plano-desc">Acesso Basico, outros planos em breve...</p>
+        </div>
 
-    <section class="card">
-      <h2>Privacidade e Dados</h2>
+        <details class="details">
+          <summary><i class="bi bi-wallet2"></i> Métodos de Pagamento</summary>
+          <div class="details-body">
+            <ul class="lista">
+              <li><i class="bi bi-credit-card"></i> ...</li>
+              <li><i class="bi bi-qr-code"></i> ...</li>
+            </ul>
+          </div>
+        </details>
 
-      <label>Visibilidade do Perfil</label>
-      <select>
-        <option>Público</option>
-        <option>Apenas Amigos</option>
-        <option>Privado</option>
-      </select>
+        <details class="details">
+          <summary><i class="bi bi-receipt"></i> Histórico de Faturas</summary>
+          <div class="details-body">
+            <ul class="lista">
+              <li><i class="bi bi-calendar3"></i> ...</li>
+            </ul>
+          </div>
+        </details>
 
-      <div class="acoes-privacidade">
-        <button class="btn-secundario">Gerenciar Cookies</button>
-        <button>Exportar Meus Dados</button>
-        <button class="btn-perigo">Excluir Conta Permanentemente</button>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Pagamentos e Assinatura</h2>
-
-      <p><strong>Plano Atual:</strong> Premium (Ativo)</p>
-
-      <details>
-        <summary>Métodos de Pagamento</summary>
-        <ul class="lista">
-          <li>Cartão final 4589</li>
-          <li>PIX cadastrado</li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Histórico de Faturas</summary>
-        <ul class="lista">
-          <li>Março 2026 - R$29,90</li>
-          <li>Fevereiro 2026 - R$29,90</li>
-        </ul>
-      </details>
-
-      <div class="acoes-pagamento">
-        <button>Fazer Upgrade</button>
-        <button class="btn-secundario">Cancelar Assinatura</button>
-      </div>
-    </section>
-
+        <div class="acoes">
+          <button class="btn btn-primario">
+            <i class="bi bi-rocket"></i> Fazer Upgrade
+          </button>
+        </div>
+      </section>
+    </div>
   </div>
+</main>
 
-  <footer>
-    <span>SetResume</span>
-    <p>
-      &copy; 2026 SetResume &nbsp;&middot;&nbsp;
-      <a href="politica-de-privacidade.html">Política de Privacidade</a> &nbsp;&middot;&nbsp;
-      <a href="sobre_nos.html">Sobre Nós</a> &nbsp;&middot;&nbsp;
-      <a href="termos-de-uso.html">Termos</a>
-    </p>
-  </footer>
+<footer>
+  <span>SetResume</span>
+  <p>
+    &copy; 2026 SetResume &nbsp;&middot;&nbsp;
+    <a href="politica-de-privacidade.html">Política de Privacidade</a> &nbsp;&middot;&nbsp;
+    <a href="sobre_nos.html">Sobre Nós</a> &nbsp;&middot;&nbsp;
+    <a href="termos-de-uso.html">Termos</a>
+  </p>
+</footer>
 
+<script>
+  var perfilBtn = document.getElementById("perfilBtn");
+  perfilBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    if (perfilBtn.classList.contains("aberto")) {
+      perfilBtn.classList.remove("aberto");
+      perfilBtn.setAttribute("aria-expanded", "false");
+    } else {
+      perfilBtn.classList.add("aberto");
+      perfilBtn.setAttribute("aria-expanded", "true");
+    }
+  });
+</script>
 </body>
 
 </html>
