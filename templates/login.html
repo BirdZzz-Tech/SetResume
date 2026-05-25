@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="pt-br">
 
@@ -50,7 +51,7 @@
             ou crie com suas credenciais
           </p>
           <form action="{% url 'cadastrar' %}" method="post" class="form">
-            {% csfr_token %}
+            {% csrf_token %}
             <label class="label-input" for="">
               <i class="fa-solid fa-user icon-modify"></i>
               <input type="text" name = "nome" placeholder="Nome" required/>
